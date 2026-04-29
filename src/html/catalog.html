@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Shop</title>
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="icon" href="/src/assets/images/icons/logo.svg" type="image/svg+xml">
+    <meta name="description" content="Professional suitcase shop for travelers.">
+</head>
+<body>
+     <header>
+        <div class="icons-logo">
+            <div class="icons socials">
+                <img src="/src/assets/images/icons/facebook.svg" alt="Facebook">
+                <img src="/src/assets/images/icons/twitter.svg" alt="Twitter">
+                <img src="/src/assets/images/icons/instagram.svg" alt="Instagram">
+            </div>
+
+            <div class="logo">
+                <a class="a-logo" href="/src/index.html">
+                    <img src="/src/assets/images/icons/logo.svg" alt="Logo" class="logo-img">
+                    <span class="logo-text">BEST SHOP</span>
+                </a>
+            </div>
+
+            <div class="icons cart-account">
+                <img src="/src/assets/images/icons/user.svg" alt="Account">
+                <a class="a-cart" href="/src/html/cart.html"><img src="/src/assets/images/icons/shopping-cart.svg" class="cart-icon" alt="Cart" /></a>
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <nav>
+            <ul>
+                <li><a href="/src/index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="/src/html/catalog.html">Catalog <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">Backpacks</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/src/html/about.html">About Us</a></li>
+                <li><a href="/src/html/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="flex-container">
+        <div class="column-container">
+    <section class="sorting-line">
+        <p class="results-showing">Showing 1-12 Of 15 Results</p>
+        <select name="sort" id="sort">
+            <option value="default">Default Sorting</option>
+            <option value="popularity">Sort By Popularity</option>
+            <option value="rating">Sort By Average Rating</option>
+            <option value="newness">Sort By Newness</option>
+            <option value="price-low-high">Sort By Price: Low To High</option>
+            <option value="price-high-low">Sort By Price: High To Low</option>
+        </select>
+        
+    </section>
+    <section class="catalog">
+        <div id="catalog-grid" class="catalog__grid">
+            <article class="product-card">
+                <span class="product-card__badge">SALE</span>
+                <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase green-1.png" alt="Vel vestibulum elit">
+                </div>
+
+                <div class="product-card__info">
+                <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                <p class="product-card__price">$250</p>
+                <a>
+                <button class="btn btn--card">Add to Cart</button>
+                </a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <span class="product-card__badge">SALE</span>
+                <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase green-1.png" alt="Vel vestibulum elit">
+                </div>
+
+                <div class="product-card__info">
+                <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                <p class="product-card__price">$250</p>
+                <a>
+                <button class="btn btn--card">Add to Cart</button>
+                </a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <span class="product-card__badge">SALE</span>
+                <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase green-1.png" alt="Vel vestibulum elit">
+                </div>
+
+                <div class="product-card__info">
+                <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                <p class="product-card__price">$250</p>
+                <a>
+                <button class="btn btn--card">Add to Cart</button>
+                </a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <span class="product-card__badge">SALE</span>
+                <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase green-1.png" alt="Vel vestibulum elit">
+                </div>
+
+                <div class="product-card__info">
+                <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                <p class="product-card__price">$250</p>
+                <a>
+                <button class="btn btn--card">Add to Cart</button>
+                </a>
+                </div>
+            </article>
+            </div>
+    </section>
+    <section class="paging">
+        <div class="paging-btns">
+            <div class="pages">
+            <a href="#" class="paging-btn"><button class="page page-one">1</button></a>
+            <a href="#" class="paging-btn"><button class="page page-two">2</button></a>
+            </div>
+            <a href="#">
+                <button class="paging-next">NEXT ></button>
+            </a>
+        </div>
+    </section>
+    </div>
+    <aside>
+        <div class="search-wrapper">
+            <input type="search" placeholder="Search Models" class="search-input">
+            <img src="/src/assets/images/icons/search.svg" alt="Search" class="search-icon">
+        </div>
+        <h2>Top Best Sets</h2>
+        <div class="set">
+            <img src="/src/assets/Pages/Catalog Page/set of suitcases red - small.png" alt="Set One" class="set-img">
+            <div class="set-content">
+            <p>Primis in faucibus aenean <br />
+            laoreet rhoncus ipsum eget.</p>
+            <div class="start-rate">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+            </div>
+            <p class="price">$1000</p>
+        </div>
+        </div>
+
+        <div class="set">
+            <img src="/src/assets/Pages/Catalog Page/set of suitcases black - small.png" alt="Set Two" class="set-img">
+            <div class="set-content">
+            <p>Vestibulum in elementum erat <br />
+            Interdum et malesuada fames.</p>
+            <div class="start-rate">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+            </div>
+            <p class="price">$1200</p>
+        </div>
+        </div>
+
+        <div class="set">
+            <img src="/src/assets/Pages/Catalog Page/set of suitcases blue - small.png" alt="Set Three" class="set-img">
+            <div class="set-content">
+            <p>Laoreet rhoncus ipsum eget  <br />
+            tempus raesent convallis.</p>
+            <div class="start-rate">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-gray.svg" alt="Star Icon">
+            </div>
+            <p class="price">$1200</p>
+        </div>
+        </div>
+
+        <div class="set">
+            <img src="/src/assets/Pages/Catalog Page/set of suitcases yellow - small.png" alt="Set Four" class="set-img">
+            <div class="set-content">
+            <p>Interdum et malesuada fames <br />
+            ante ipsum primis in faucibus.</p>
+            <div class="start-rate">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-gray.svg" alt="Star Icon">
+            </div>
+            <p class="price">$1500</p>
+        </div>
+        </div>
+
+        <div class="set">
+            <img src="/src/assets/Pages/Catalog Page/set of suitcases green - small.png" alt="Set Five" class="set-img">
+            <div class="set-content">
+            <p>Rhoncus ipsum eget tempus <br />
+            Praesent convallis fermentum.</p>
+            <div class="start-rate">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                <img src="/src/assets/images/icons/star-gray.svg" alt="Star Icon">
+            </div>
+            <p class="price">$1100</p>
+        </div>
+        </div>
+    </aside>
+</div>
+        <section class="our-benefits">
+            <h2>Our Benefits</h2>
+            <div class="benefits">
+            <div class="benefit-one benefit">
+                <img src="/src/assets/images/icons/plane-icon.svg" alt="Benefit One Icon">
+                <p>Velit nisl sodales eget <br />
+                donec quis. volutpat orci.</p>
+            </div>
+            <div class="benefit-two benefit">
+                <img src="/src/assets/images/icons/car-icon.svg" alt="Benefit Two Icon">
+                <p>Dolor eu varius. Morbi <br />
+                fermentum velit nisl.</p>
+            </div>
+            <div class="benefit-three benefit"> 
+                <img src="/src/assets/images/icons/money-icon.svg" alt="Benefit Three Icon">
+                <p>Malesuada fames ac ante <br />
+                ipsum primis in faucibus.</p>
+            </div>
+            <div class="benefit-four benefit">
+                <img src="/src/assets/images/icons/education-icon.svg" alt="Benefit Four Icon">
+                <p>Nisl sodales eget donec  <br />
+                quis. volutpat orci. </p>
+                </div>
+            </div>    
+        </section>
+    </main>
+    <footer>
+        <div class="two-sides">
+      <div class="footer-left">
+        <div class="three-columns">
+        <div class="about-us">
+            <h4><a href="/src/html/about.html">About Us</a></h4>
+            <p class="organisation">Organisation</p>
+            <p class="partners">Partners</p>
+            <p class="clients">Clients</p>
+        </div>
+            <div class="interesting-links">
+                <h4>Interesting Links</h4>
+                <p class="photo-gallery">Photo Gallery</p>
+                <p class="out-team">Our Team</p>
+                <p class="socials">Socials</p>
+            </div>
+            <div class="achievements">
+                <h4>Achievements</h4>
+                <p class="winning-awards">Winning Awards</p>
+                <p class="press">Press</p>
+                <p class="our-clients">Our Amazing Clients</p>
+            </div>
+            </div>
+            <div class="shipping-info">
+                <h4>Shipping Information</h4>
+                <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh <br />
+                rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, <br />
+                vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam. </p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="contact-us">
+                <h4><a href="/src/html/contact.html">Contact Us</a></h4>
+                <p>Bendum dolor eu varius. Morbi fermentum velitsodales <br />
+                egetonec. volutpat orci. Sed ipsum felis, tristique <br />
+                egestas et, convallis ac velitn consequat nec luctus.</p>
+            </div>
+            <div class="contacts">
+                <div class="phone contact">
+                    <img src="/src/assets/images/icons/phone-icon.svg" alt="Phone Icon">
+                    <p>Phone: (+63) 236 6322</p>
+                </div>
+                <div class="email contact">
+                    <img src="/src/assets/images/icons/letter-icon.svg" alt="Email Icon">
+                    <p>public@news.com</p>
+                </div>
+                <div class="work-time contact">
+                    <img src="/src/assets/images/icons/time-icon.svg" alt="Clock Icon">
+                    <p>Mon - Fri: 10am - 6pm <br />
+                       Sat - Sun: 10am - 6pm</p>
+                </div>
+                <div class="address contact">
+                    <img src="/src/assets/images/icons/geo-icon.svg" alt="Location Icon">
+                    <p>639 Jade Valley, <br />
+                    Washington Dc</p>
+                </div>
+            </div>
+        </div>
+        </div>    
+        </div class="footer-copyright">  
+          <p class="copyright">© Copyright 2025</p>
+    </footer>
+
+    <div id="login-modal" class="log-in-modal modal-hidden">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button> <h2>Log In</h2>
+        
+        <label for="login-email">
+            Email address <span class="purple-star">*</span>
+        </label>
+        <input type="email" id="login-email" required> <label for="login-password">
+            Password <span class="purple-star">*</span>
+        </label>
+        <div class="password-wrapper">
+            <input type="password" id="login-password" required> <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" alt="Show/hide password"> </div>
+
+        <div class="additional-buttons">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <button class="btn-log-in" type="submit">LOG IN</button>
+    </div>
+</div>
+</body>
+</html>

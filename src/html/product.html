@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Shop</title>
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="icon" href="/src/assets/images/icons/logo.svg" type="image/svg+xml">
+    <meta name="description" content="Professional suitcase shop for travelers.">
+</head>
+<body>
+     <header>
+        <div class="icons-logo">
+            <div class="icons socials">
+                <img src="/src/assets/images/icons/facebook.svg" alt="Facebook">
+                <img src="/src/assets/images/icons/twitter.svg" alt="Twitter">
+                <img src="/src/assets/images/icons/instagram.svg" alt="Instagram">
+            </div>
+
+            <div class="logo">
+                <a class="a-logo" href="/src/index.html">
+                    <img src="/src/assets/images/icons/logo.svg" alt="Logo" class="logo-img">
+                    <span class="logo-text">BEST SHOP</span>
+                </a>
+            </div>
+
+            <div class="icons cart-account">
+                <img src="/src/assets/images/icons/user.svg" alt="Account">
+                <a class="a-cart" href="/src/html/cart.html"><img src="/src/assets/images/icons/shopping-cart.svg" class="cart-icon" alt="Cart" /></a>
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <nav>
+            <ul>
+                <li><a href="/src/index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="/src/html/catalog.html">Catalog <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">Backpacks</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/src/html/about.html">About Us</a></li>
+                <li><a href="/src/html/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-page">
+            <div class="product-container">
+                <div class="left-side">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase yellow.png" alt="Suitcase Image" class="suitcase-image" id="suitcase-image-main" />
+                    <div class="additional-images">
+                        <img src="/src/assets/Pages/Product Card/suitcase-small-card-1.png" alt="Additional Image One" class="additional-image" id="additional-image-one" />
+                        <img src="/src/assets/Pages/Product Card/suitcase-small-4.png" alt="Additional Image Two" class="additional-image" id="additional-image-two" />
+                        <img src="/src/assets/Pages/Product Card/suitcase-small-2.png" alt="Additional Image Three" class="additional-image" id="additional-image-three" />
+                        <img src="/src/assets/Pages/Product Card/yellow_open1.png" alt="Additional Image Four" class="additional-image" id="additional-image-four" />
+                    </div>
+                </div>
+                <div class="right-side">
+                    <h1 class="product-name" id="product-title">Global Explorer Max Comfort <br /> Suitcase Pro</h1>
+                    <div class="rating">
+                        <div class="start-rate">
+                        <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                        <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                        <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                        <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                        <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                        </div>
+                        <p>(1 Clients Review)</p>
+                    </div>
+                    <p class="price" id="product-price">$250</p>
+                    <div class="description" id="product-description">
+                        <p>Our new suitcase is a bold reimagining of <br />
+                           travel essentials, designed to elevate every journey. Made with at least 30% <br />
+                           recycled materials, its lightweight yet impact-resistant shell combines eco- <br />
+                           conscious innovation with rugged durability.
+                        </p>
+                        <p>The ergonomic handle and GlideMotion spinner wheels ensure effortless <br />  
+                           mobility while making a statement in sleek design. Inside, the modular <br />  
+                           compartments and adjustable straps keep your belongings secure and <br />
+                           neatly organized, no matter the destination.
+                        </p>
+                    </div>
+                    <div class="product-options">
+                        <label class="size-option" id="product-size">
+                            Size 
+                            <select>
+                                <option value="default">Choose option</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </label>
+                        <label class="color-option" id="product-color">
+                            Color 
+                            <select>
+                                <option value="default">Choose option</option>
+                                <option value="black">Black</option>
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                            </select>
+                        </label>
+                        <label class="category" id="product-category">
+                            Category
+                            <select>
+                                <option value="default">Choose option</option>
+                                <option value="suitcase">Suitcases</option>
+                                <option value="kids' luggage">Kids' luggage</option>
+                                <option value="luggage sets">Luggage sets</option>
+                                <option value="carry-ons">Carry-ons</option>
+                            </select>
+                        </label>    
+                    </div>
+                    <div class="add-to-cart">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn minus" id="decrease-qty">-</button>
+                            
+                            <input type="number" class="quantity-number" id="product-qty" value="1" min="1" readonly>
+                            
+                            <button type="button" class="qty-btn plus" id="increase-qty">+</button>
+                        </div>
+                        <button type="button" id="add-to-cart" class="btn--long">Add To Cart</button>
+                    </div>
+                    <div class="payment">
+                        <p>Payment:</p>
+                        <img src="/src/assets/Pages/Product Card/visa.png" />
+                        <img src="/src/assets/Pages/Product Card/american-express.png" />
+                        <img src="/src/assets/Pages/Product Card/mastercard.png" />
+                        <img src="/src/assets/Pages/Product Card/paypal.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="more-details">
+                <div class="product-tabs">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="details">DETAILS</button>
+                        <button class="tab-btn" data-tab="reviews">REVIEWS</button>
+                        <button class="tab-btn" data-tab="shipping">SHIPPING POLICY</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-panel active main-content" id="details">
+                            <p>Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla porta risus id neque tempor, in efficitur justo imperdiet. Etiam a ex at <br />
+                               ante tincidunt imperdiet. Nunc congue ex vel nisl viverra, sit amet aliquet lectus ullamcorper. Praesent luctus lacus non lorem elementum, eu tristique <br />
+                               sapien suscipit. Sed bibendum, ipsum nec viverra malesuada, erat nisi sodales purus, eget hendrerit dui ligula eu enim. Ut non est nisi. Pellentesque <br /> 
+                               tristique pretium dolor eu commodo. Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus. Suspendisse potenti. <br />
+                               Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam.
+                            </p>
+                            <p>Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales <br />
+                               risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis nibh vitae lectus mollis bibendum. 
+                            </p>
+                            <p>Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, <br />
+                               ullamcorper turpis pharetra, facilisis quam. 
+                            </p>
+                        </div>
+                        
+                        <div class="tab-panel reviews" id="reviews">
+                            <div class="left-side-reviews">
+                                <h3>1 review for Global Explorer Max Suitcase Pro</h3>
+                                <div class="review-part">
+                                    <div class="author-line">
+                                        <div class="author-info"><img src="/src/assets/Pages/Product Card/review customer.png" alt="Review Author Photo" />
+                                        <p class="author-name">Ella Harper <span class="author-date">/June 11, 2025</span></p></div>
+                                        <div class="start-rate">
+                                            <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                                            <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                                            <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                                            <img src="/src/assets/images/icons/star-yellow.svg" alt="Star Icon">
+                                            <img src="/src/assets/images/icons/star-gray.svg" alt="Star Icon">
+                                        </div>
+                                    </div>
+                                        <p class="p-review">Proin iaculis nibh vitae lectus mollis bibendum. Quisque <br />
+                                        varius eget urna sit amet luctus. Suspendisse potenti <br /> 
+                                        curabitur ac placerat est, sit amet sodales risus.
+                                        </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="right-side-reviews">
+                                <h3>Add Review</h3>
+                                <p class="email-text">Your email address won't be shared with anybody. Required fields have the symbol *</p>
+                                <div class="rate-line">
+                                    <h3>RATE PRODUCT</h3>
+                                    <div class="stars-to-rate">
+                                        <img class="star-to-rate" src="/src/assets/images/icons/star-to-rate.png" />
+                                        <img class="star-to-rate" src="/src/assets/images/icons/star-to-rate.png" />
+                                        <img class="star-to-rate" src="/src/assets/images/icons/star-to-rate.png" />
+                                        <img class="star-to-rate" src="/src/assets/images/icons/star-to-rate.png" />
+                                        <img class="star-to-rate" src="/src/assets/images/icons/star-to-rate.png" />
+                                    </div></div>
+                                    <form class="form-review" >
+                                        <textarea placeholder="Your Review *" id="user-review" required></textarea>
+                                        <input type="text" placeholder="Your Name *" id="name-review" required />
+                                        <input type="email" placeholder="Your Email *" id="email-review" required />
+                                        <div class="remember-me-line"><input type="checkbox" id="remember-me" />
+                                        <p class="checkbox-rate">Save my name, email, and website in this browser for when I leave another comment.</p>
+                                        </div>
+                                        <button class="btn-review" type="submit">SUBMIT</button>
+                                    </form>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="shipping">
+                        <p class="shipping-policy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae ex ut nunc vestibulum malesuada at id augue. Donec non libero pulvinar dolor faucibus aliquet. Fusce in nisi scelerisque est porttitor dignissim. Phasellus rutrum dignissim diam. Sed interdum nulla nec magna imperdiet maximus. Mauris malesuada a est quis gravida. Ut commodo ex convallis augue lacinia consectetur. Sed volutpat enim sed risus consequat, laoreet pharetra eros malesuada. Sed ut massa ac lacus interdum pellentesque ut eu mauris. Fusce bibendum porta elementum. Proin dui arcu, tempus sed velit in, tempor blandit ante. Quisque eu arcu ac orci aliquam facilisis et et turpis. Curabitur non libero nec elit vulputate venenatis.</p>
+                        <p class="shipping-policy">Quisque posuere efficitur purus ac ultrices. Suspendisse potenti. Aliquam quis cursus quam. Mauris lacinia tellus tellus, sed tincidunt nibh lobortis in. Nunc mollis odio id mi vulputate, eget blandit erat accumsan. Morbi elementum, mi sed laoreet porta, libero augue hendrerit diam, in scelerisque quam sapien vitae nisl. Praesent faucibus in ex vitae feugiat. Nunc in pretium purus, sit amet euismod orci. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="you-may-like">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="title-underline"></div>
+             <div class="cards">
+                <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-card__badge">SALE</div>
+                    <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase black.png" alt="Suitcase Image" />
+                    </div>
+                    
+                    <div class="product-card__info">
+                            <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                            <p class="product-card__price">$250</p>
+                            <a>
+                            <button class="btn btn--card">Add to Cart</button>
+                            </a>
+                        </div>
+                    </div>
+                <div class="product-card">
+                    <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase blue-1.png" alt="Suitcase Image" />
+                    </div>
+                    
+                     <div class="product-card__info">
+                            <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                            <p class="product-card__price">$220</p>
+                            <a>
+                            <button class="btn btn--card">Add to Cart</button>
+                            </a>
+                        </div>
+                    </div>
+                <div class="product-card">
+                    <div class="product-card__badge">SALE</div>
+                    <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase red-1.png" alt="Suitcase Image" />
+                     </div>
+                    
+                    <div class="product-card__info">
+                            <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                            <p class="product-card__price">$300</p>
+                            <a>
+                            <button class="btn btn--card">Add to Cart</button>
+                            </a>
+                        </div>
+                    </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                    <img src="/src/assets/Pages/Catalog Page/suitcase orange.png" alt="Suitcase Image" />
+                    </div>
+                    
+                    
+                    <div class="product-card__info">
+                            <h3 class="product-card__name">Vel vestibulum elit <br /> tuvel euqen.</h3>
+                            <p class="product-card__price">$350</p>
+                            <a>
+                            <button class="btn btn--card">Add to Cart</button>
+                            </a>
+                        </div>
+                    </div>
+             </div>
+             </div>
+        </section>
+        <section class="our-benefits">
+            <h2>Our Benefits</h2>
+            <div class="benefits">
+            <div class="benefit-one benefit">
+                <img src="/src/assets/images/icons/plane-icon.svg" alt="Benefit One Icon">
+                <p>Velit nisl sodales eget <br />
+                donec quis. volutpat orci.</p>
+            </div>
+            <div class="benefit-two benefit">
+                <img src="/src/assets/images/icons/car-icon.svg" alt="Benefit Two Icon">
+                <p>Dolor eu varius. Morbi <br />
+                fermentum velit nisl.</p>
+            </div>
+            <div class="benefit-three benefit"> 
+                <img src="/src/assets/images/icons/money-icon.svg" alt="Benefit Three Icon">
+                <p>Malesuada fames ac ante <br />
+                ipsum primis in faucibus.</p>
+            </div>
+            <div class="benefit-four benefit">
+                <img src="/src/assets/images/icons/education-icon.svg" alt="Benefit Four Icon">
+                <p>Nisl sodales eget donec  <br />
+                quis. volutpat orci. </p>
+                </div>
+            </div>    
+        </section>
+    </main>
+    <footer>
+        <div class="two-sides">
+      <div class="footer-left">
+        <div class="three-columns">
+        <div class="about-us">
+            <h4><a href="/src/html/about.html">About Us</a></h4>
+            <p class="organisation">Organisation</p>
+            <p class="partners">Partners</p>
+            <p class="clients">Clients</p>
+        </div>
+            <div class="interesting-links">
+                <h4>Interesting Links</h4>
+                <p class="photo-gallery">Photo Gallery</p>
+                <p class="out-team">Our Team</p>
+                <p class="socials">Socials</p>
+            </div>
+            <div class="achievements">
+                <h4>Achievements</h4>
+                <p class="winning-awards">Winning Awards</p>
+                <p class="press">Press</p>
+                <p class="our-clients">Our Amazing Clients</p>
+            </div>
+            </div>
+            <div class="shipping-info">
+                <h4>Shipping Information</h4>
+                <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh <br />
+                rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, <br />
+                vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam. </p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="contact-us">
+                <h4><a href="/src/html/contact.html">Contact Us</a></h4>
+                <p>Bendum dolor eu varius. Morbi fermentum velitsodales <br />
+                egetonec. volutpat orci. Sed ipsum felis, tristique <br />
+                egestas et, convallis ac velitn consequat nec luctus.</p>
+            </div>
+            <div class="contacts">
+                <div class="phone contact">
+                    <img src="/src/assets/images/icons/phone-icon.svg" alt="Phone Icon">
+                    <p>Phone: (+63) 236 6322</p>
+                </div>
+                <div class="email contact">
+                    <img src="/src/assets/images/icons/letter-icon.svg" alt="Email Icon">
+                    <p>public@news.com</p>
+                </div>
+                <div class="work-time contact">
+                    <img src="/src/assets/images/icons/time-icon.svg" alt="Clock Icon">
+                    <p>Mon - Fri: 10am - 6pm <br />
+                       Sat - Sun: 10am - 6pm</p>
+                </div>
+                <div class="address contact">
+                    <img src="/src/assets/images/icons/geo-icon.svg" alt="Location Icon">
+                    <p>639 Jade Valley, <br />
+                    Washington Dc</p>
+                </div>
+            </div>
+        </div>
+        </div>    
+        </div class="footer-copyright">  
+          <p class="copyright">© Copyright 2025</p>
+    </footer>
+
+    <div id="login-modal" class="log-in-modal modal-hidden">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button> <h2>Log In</h2>
+        
+        <label for="login-email">
+            Email address <span class="purple-star">*</span>
+        </label>
+        <input type="email" id="login-email" required> <label for="login-password">
+            Password <span class="purple-star">*</span>
+        </label>
+        <div class="password-wrapper">
+            <input type="password" id="login-password" required> <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" alt="Show/hide password"> </div>
+
+        <div class="additional-buttons">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <button class="btn-log-in" type="submit">LOG IN</button>
+    </div>
+</div>
+</body>
+</html>

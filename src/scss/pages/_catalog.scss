@@ -1,0 +1,143 @@
+body {
+    main {
+        overflow: hidden;
+
+        .flex-container {
+            display: flex;
+            flex: 4;
+        
+            .column-container {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                margin-left: 40px;
+                margin-right: 20px;
+                margin-bottom: 100px;
+
+                .sorting-line {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 50px;
+                    margin-bottom: 5px;
+                    
+                    .results-showing {
+                        font-size: 15px;
+                        color: $dark-gray;
+                    }
+                    #sort {
+                        padding: 10px 20px;
+                        color: $dark-gray;
+                        font-size: 17px;
+                        border: 2px solid $light-gray;
+                        margin-right: 23px;
+                        
+                    }
+                }
+
+                .paging {
+                    .paging-btns {
+                        display: flex;
+                        gap: 300px;
+                        justify-content: right;
+
+                        .pages {
+
+                            .page {
+                                border-radius: 7px;
+                                border: 0 solid;
+                                gap: 10px;
+                            }
+
+                            .page-one{
+                                    padding: 10px 15px;
+                                    background-color: $main-color;
+                                    color: white; 
+                                }
+
+                                .page-two {
+                                    padding: 10px 15px;
+                                    background-color: white;
+                                }
+                        }
+
+                        .paging-next {
+                                padding: 10px 20px;
+                                background-color: white;
+                                border: 3px solid $main-color;
+                                border-radius: 7px;
+                            }
+                        }
+                    }
+            }
+
+            aside {
+                flex: 1;
+                padding: 15;
+                margin-top: 50px;
+
+                .search-wrapper {
+                    position: relative; 
+                    width: 100%;
+                    max-width: 300px;  
+
+                    .search-input {
+                        width: 100%;
+                        padding: 10px 0px 10px 10px; 
+                        font-size: 17px;
+                        color: $dark-gray;
+                        border: 2px solid $light-gray;
+                        outline: none;
+                        transition: border-color 0.3s ease;
+
+                        &:focus {
+                            border-color: $main-color; 
+                        }
+                    }
+
+                    .search-icon {
+                        position: absolute; 
+                        top: 50%;           
+                        right: 15px;        
+                        transform: translateY(-50%); 
+                        width: 20px;        
+                        height: auto;
+                        pointer-events: none; 
+                    }
+                }
+
+                h2 {
+                    padding: 35px 0 10px 0;
+                    font-size: 20px;
+                }
+
+                .set {
+                    display: flex;
+
+                    .set-img {
+                        display: flex;
+                        height: 110px;
+                        width: 100%;
+                        max-width: 90px;
+                        padding-top: 15px;
+                    }
+
+                    .set-content {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 10px;
+
+                        p {
+                            padding: 9px 0;
+                        }
+
+                        .start-rate {
+                            display: flex;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}    

@@ -1,0 +1,108 @@
+body {
+    main {
+        overflow: hidden;
+
+       .hero-contact {
+            width: 100%;
+            height: 500px; 
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('/src/assets/Pages/Contact Us/banner image.jpg'); 
+            
+            background-size: cover;    
+            background-position: center; 
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            .hero-content-contact {
+                color: #fff;
+                max-width: 800px;
+                padding: 0 20px;
+
+                .hero-title-contact {
+                    font-size: 48px;
+                    font-weight: 900;
+                    margin-bottom: 20px;
+                }
+
+                .hero-description-contact {
+                    font-size: 18px;
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        .more-info-contact {
+            display: flex;
+            justify-content: space-around;
+            margin: 140px auto;      
+            max-width: 1200px;       
+            padding: 0 20px;
+
+            .info-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+                text-align: center;  
+                flex: 1;            
+
+                img {
+                    width: 70px;    
+                    height: 70px;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    padding: 0;    
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 1.5;
+                    color: #666;
+                    margin: 0;
+                }
+            }
+        }
+        
+        .main-section {
+            display: flex;
+            margin-bottom: 150px;
+            
+            .left-contact {
+                flex: 1;
+
+                img {
+                    display: flex;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                    width: 100%;
+                    height: 645px;
+                    max-width: 500px;
+                }
+
+            }
+            .right-contact {
+                flex: 1;
+                .message-success {
+                    color: green;
+                    margin-top: 15px;
+                    font-weight: 600;
+                }
+
+                .message-error {
+                    color: #B92770; // Твій фірмовий колір для помилок
+                    margin-top: 15px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}    

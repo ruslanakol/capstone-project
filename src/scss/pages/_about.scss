@@ -1,0 +1,235 @@
+body {
+    main {
+        overflow: hidden;
+
+       .hero-about {
+            width: 100%;
+            height: 500px; 
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('/src/assets/Pages/About Us/banner image.jpg'); 
+            
+            background-size: cover;    
+            background-position: center; 
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            .hero-content-about {
+                color: #fff;
+                max-width: 800px;
+                padding: 0 20px;
+
+                .hero-title-about {
+                    font-size: 48px;
+                    font-weight: 900;
+                    margin-bottom: 20px;
+                }
+
+                .hero-description-about {
+                    font-size: 18px;
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        .more-info {
+            display: flex;
+            justify-content: space-around;
+            margin: 140px 0 140px 0;
+
+            .info-item {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                h2 {
+                    padding: 20px 0 20px 0;
+                }
+
+                img {
+                    margin-left: 80px;
+                }
+            }
+        }
+
+        .new-arrivals {
+            display: flex;
+            margin: 0 0 100px 80px;
+            align-items: center;
+
+            .new-arrivals-left-side {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+
+                h2 {
+                    font-size: 40px;
+                    font-weight: 900;
+                    padding: 0 0 20px 0;
+                }
+
+                p {
+                    padding: 0 0 20px 0;
+                }
+            }
+            .new-arrival-right-side {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                img {
+                    height: 350px;
+                    width: 100%; 
+                    max-width: 600px;
+                    flex-shrink: 0;
+                    object-fit: cover;
+                    display: block;
+                    margin-left: -50px;
+                }
+            }
+        }
+
+        .our-team {
+            margin: 0 100px 90px 100px;
+
+            h2 {
+                font-size: 70px;
+                font-weight: 900;
+                padding: 0 0 5px 0;
+                text-align: center;
+            }
+            .puprle-line {
+                background-color: $main-color;
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                height: 2px;
+                margin-bottom: 70px;
+            }
+            .employees {
+                display: flex;
+                justify-content: space-around;
+                gap: 10px;
+
+                .employee {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+
+                    img {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        max-width: 400px;
+                    }
+
+                    h3 {
+                        padding: 30px 0 30px 0;
+                    }
+                }
+            }
+        }
+
+        .banner {
+                position: relative;
+                width: 90%;
+                overflow: hidden;
+                margin-left: auto;
+                margin-right: auto;
+                height: 100%;
+                margin-bottom: 80px;
+            .banner-content {
+                img {
+                    width: 80%;
+                    max-width: 1300px;
+                    height: 80%;
+                    display: block;
+                    margin: 0 auto;
+                    position: relative;
+                }
+                .layout {
+                    position: absolute;
+                    width: 80%;
+                    top: 0; left: 136px; right: 0; bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+                .banner-info {
+                    position: absolute;
+                    top: 43%;
+                    left: 45%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    color: white;
+                    display: flex;
+                    width: 100%;
+                    margin-left: 285px;
+
+                    .banner-info-left {
+                        text-align: left;
+
+                        .banner-discount {
+                            font-size: 190px;
+                            font-weight: 900;
+                        }
+                        .banner-description-discount {
+                            font-size: 18px;
+                            margin-top: -50px;
+                        }
+                    }
+                    .banner-info-right {
+                        text-align: left;
+                        margin-left: 120px;
+                        margin-top: 70px;
+                        
+                        .banner-offer {
+                            font-size: 34px;
+                            font-weight: 900;
+                            padding-bottom: 20px;
+                        }
+
+                        .banner-offer-description{
+                            padding-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .our-benefits {
+            justify-content: space-evenly;
+            gap: 30px;
+            background-color: $dark-gray;
+            height: 220px;
+            margin-bottom: 100px;
+            background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
+            h2 {
+                font-size: 20px;
+                font-weight: 900;
+                margin-bottom: 10px;
+                margin-left: 100px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                color: white;
+            }
+            
+            .benefits {
+            margin: 0 30px 0 30px ;
+                display: flex;
+                justify-content: space-evenly;
+                .benefit {
+                    display: flex;
+                    gap: 20px;
+                    color: white;
+                    p {
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

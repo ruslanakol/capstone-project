@@ -1,0 +1,708 @@
+body {
+    overflow-x: hidden;
+    main {
+        overflow: hidden;
+        .hero {
+            height: 900px;
+            background-color: $light-gray;
+
+            @media (max-width: 768px){
+                height: auto !important;
+                padding-top: 20px;
+            }
+            @media (max-width: 1024px){
+                height: 800px !important;
+                padding-top: 10px;
+            }
+
+
+            .hero-background {
+                    display: flex;
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        text-align: center;
+                    } 
+                    @media (max-width: 1024px){
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .hero-content {
+                        margin-bottom: 20px;
+                        margin-left: 200px;
+                        margin-top: 230px;
+
+                            @media (max-width: 1024px){
+                                margin: 50px 20px 20px 20px;
+
+                                h1 {
+                                    font-size: 32px;
+                                }
+                            }
+
+                            @media (max-width: 768px) {
+                                margin: 50px 20px 20px 20px;
+
+                                h1 {
+                                    font-size: 32px;
+                                }
+                            }
+
+                        h1 {
+                            font-size: 45px;
+                            font-weight: 900;
+                            margin-bottom: 20px;
+                        }
+                        p {
+                            color: $dark-gray;
+                        }
+                    }
+            } 
+
+            img {
+               margin-top: 130px;
+                width: 100%; 
+                max-width: 800px; 
+                height: auto !important; 
+                padding-right: 100px;
+                flex-shrink: 0;
+
+                @media(max-width: 1024px){
+                    margin: 0 auto !important;
+                    display: block;
+                    padding-right: 70px;
+                    width: 100%; 
+                    max-width: 400px; 
+                    order: 2;
+                }
+
+                @media (max-width: 768px) {
+                    margin: 0 auto !important;
+                    display: block;
+                    padding-right: 70px;
+                    width: 100%; 
+                    max-width: 400px; 
+                    order: 2;
+                }
+            }  
+
+
+
+            .discount-section {
+                display: flex; 
+                width: 100%;
+                max-width: 1200px; 
+                margin: 40px auto; 
+                align-items: stretch;
+                background-color: white;
+                box-shadow: 10px 10px 10px 10px $light-gray;
+
+                @media (max-width: 768px) {
+                    flex-direction: column; 
+                    width: 90%;
+                }
+                    .discount-section-left {
+                    flex: 1; 
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 60px;
+
+                    @media (max-width: 768px) {
+                        padding: 30px; 
+                        height: auto;
+
+                        .author {
+                            flex-direction: column; // Аватар над іменем
+                            text-align: center;
+                            margin-left: 50px;
+                            
+                            .author-info {
+                                margin-left: 0; // Прибираємо негативний марджин
+                            }
+                        }
+                    }
+        
+                    .author {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        margin-bottom: 20px;
+                        
+                        @media (max-width: 768px) {
+                                flex-direction: column-reverse; 
+                                gap: 15px;
+                                text-align: center;
+                                
+                                .author-info {
+                                    margin-left: -90px !important; 
+                                }
+                            }
+
+
+                        img {
+                            width: 180px;
+                            height: auto;
+                            flex-shrink: 0;
+                            object-fit: cover;
+                            display: block;
+                            margin: 0 0;
+                        }
+                        
+                        .author-info {
+                            margin-left: -100px;
+                            p { margin: 0; }
+                            
+                        }
+                        .author-name {
+                            font-weight: 700;
+                            font-size: 18px;
+                        }   
+                  }
+                   
+                  .author-content {
+                    h2 {
+                        font-size: 30px;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        color: $dark-gray;
+                        padding: 0 0 20px 0;
+                    }
+                }
+            }
+                .discount-section-right {
+                    flex: 1; 
+                    position: relative; 
+                    display: flex;
+                    align-items: stretch;
+                    min-height: 300px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; 
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin: 0;
+
+                        @media (max-width: 768px) {
+                            width: 100%;
+                            height: auto;
+                            max-width: 500px;
+                            display: flex;
+                            object-fit: cover;
+
+                        }
+                    }
+
+                    .layout {
+                        position: absolute;
+                        top: 0; left: 0; right: 0; bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+
+                    .discount-info {
+                        position: absolute;
+                        color: white;
+                        margin: 140px 0 10px 60px;
+
+                        .main-text {
+                            font-size: 40px;
+                            font-weight: 700;
+                        }
+                        @media (max-width: 768px) {
+                            margin: 70px 40px; 
+                            padding-top: 240px;
+
+                            .main-text {
+                                font-size: 30px;
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+    
+
+            
+        
+        .travel-suitcases-section {
+            margin-top: 550px;
+            padding-bottom: 50px;
+
+            @media (max-width: 768px) {
+                padding-top: 300px;
+            }
+            @media (max-width: 1024px) {
+                margin-top: 370px;
+                margin-left: -100px;
+            }
+
+            h2 {
+                font-size: 30px;
+                font-weight: 900;
+                margin-bottom: 10px;
+                text-align: center;
+
+                @media (max-width: 768px) {
+                    color: black;
+                    margin-left: -30px;
+                }
+                @media (max-width: 1024px) {
+                    color: black;
+                    margin-left: -30px;
+                }
+            }
+            p {
+                color: $dark-gray;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .travel-cards-container {
+                width: 100%;
+                max-width: 1300px; 
+                margin: 0 auto;
+                overflow: hidden; 
+                margin-left: 150px;
+
+                @media (max-width: 768px) {
+                    margin-left: 20px;
+                }
+            }
+
+            .travel-cards-track {
+                display: flex;
+                gap: 20px; 
+                flex-wrap: nowrap;
+                transition: transform 0.5s ease;
+            }
+
+            .travel-card {
+                flex: 0 0 300px;
+                width: 600px;
+                height: 500px; 
+                position: relative;
+                overflow: hidden;
+
+                .layout {
+                    position: absolute;
+                    inset: 0;
+                    height: 100%;
+                    width: 85%;
+                    background-color: rgba(0, 0, 0, 0.4); 
+                   
+                }
+
+                &__image {
+                    width: 850px;
+                    height: 500px;
+                    overflow: hidden; 
+                    margin: 0 0px 15px 0;
+                  
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
+                }
+                .card-content {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 30px;
+                    right: 20px;
+                    color: white;
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        text-align: left;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        color: $light-gray;
+                    }
+                }
+            }
+
+            .slider-controls {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 30px;
+
+                button {
+                    padding: 12px 30px;
+                    background-color: $main-color;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 600;
+                    transition: opacity 0.3s;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+
+                }
+            }
+        }
+        .selected-products, .new-products-arrival {
+            padding: 50px 50px;
+            margin-top: -40px;
+
+            @media (max-width: 768px) {
+                    color: black;
+                    margin-left: -30px;
+                }
+                @media (max-width: 1024px) {
+                   h2 { color: black; }
+                    margin-left: 0px;
+                }
+
+            .products-grid {
+            display: flex;               
+            justify-content: space-between; 
+            gap: 30px;                   
+            flex-wrap: wrap;             
+
+            .product-card {
+                flex: 1 1 calc(25% - 30px); 
+                max-width: 270px;
+            }
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        p {
+            text-align: center;
+            color: $dark-gray;
+            margin-top: -40px;
+            margin-bottom: 60px;
+        }
+        .arrival-name {
+            margin-top: 10px;
+        }
+        }
+        .banner-home {
+                position: relative;
+                width: 90%;
+                overflow: hidden;
+                margin-left: auto;
+                margin-right: auto;
+                height: 100%;
+                margin-bottom: 80px;
+
+                @media(max-width: 768px){
+                    width: 80%; 
+                    margin-bottom: 80px;
+                    max-height: 200px;
+                    display: flex;
+                    height: auto; 
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px 10px; 
+                }
+
+            .banner-content {
+                img {
+                    width: 80%;
+                    max-width: 1300px;
+                    height: 80%;
+                    display: block;
+                    margin: 0 auto;
+                    position: relative;
+
+                    @media(max-width: 768px){
+                        width: 100%; 
+                        height: 100%; 
+                        position: absolute; 
+                        top: 0;
+                        left: 0;
+                        object-fit: cover;
+                    }
+                }
+                .layout {
+                    position: absolute;
+                    width: 80%;
+                    top: 0; left: 136px; right: 0; bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.4);
+
+                    @media (max-width: 768px) {
+                        width: 100%; 
+                        height: 100%;
+                        top: 0; left: 0; right: 0; bottom: 0;
+                    }
+                }
+                .banner-info {
+                    position: absolute;
+                    top: 43%;
+                    left: 45%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    color: white;
+                    display: flex;
+                    width: 100%;
+                    margin-left: 285px;
+                    
+                    @media(max-width: 768px) {
+                        position: relative; 
+                        top: auto;
+                        left: auto;
+                        transform: none;
+                        margin-left: 0; 
+                        width: 90%; 
+                        display: flex;
+                        flex-direction: row; 
+                        align-items: center; 
+                        text-align: center;
+                        z-index: 2;
+
+                        .banner-info-left {
+                            text-align: center;
+
+                            @media (max-width: 768px) {
+                                text-align: center;
+                                
+                                .banner-discount {
+                                    font-size: 70px;
+                                    font-weight: 900;
+                                }
+                                .banner-description-discount {
+                                    margin-top: 0;
+                                    margin-bottom: 10px;
+                                    font-size: 16px;
+                                }
+                            }
+                            .banner-discount {
+                                font-size: 80px; 
+                                line-height: 1;
+                            }
+                            .banner-description-discount {
+                                margin-top: 0;
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        .banner-info-right {
+                            margin-left: 0; 
+                            margin-top: 10px; 
+                            text-align: center;
+                            
+                            @media (max-width: 768px) {
+                                padding: 40px 0 40px 0;
+                                margin-left: 0; 
+                                margin-top: 5px;
+                                text-align: center;
+                                
+                                .banner-offer {
+                                    font-size: 10px; 
+                                    padding-bottom: 5px;
+                                }
+                                .banner-offer-description {
+                                    font-size: 15px;
+                                    line-height: 1.3;
+                                    margin-bottom: -30px;
+                                }
+                            }
+
+                            .banner-offer {
+                                font-size: 24px;
+                                padding-bottom: 5px;
+                            }
+                            .banner-offer-description {
+                                font-size: 14px;
+                                padding-bottom: 10px;
+                            }
+                        }
+                    }
+        
+                    }
+
+                    .banner-info-left {
+                        text-align: left;
+
+                        .banner-discount {
+                            font-size: 190px;
+                            font-weight: 900;
+                        }
+                        .banner-description-discount {
+                            font-size: 18px;
+                            margin-top: -50px;
+                        }
+                    }
+                    .banner-info-right {
+                        text-align: left;
+                        margin-left: 120px;
+                        margin-top: 70px;
+                        
+                        
+
+                        .banner-offer {
+                            font-size: 34px;
+                            font-weight: 900;
+                            padding-bottom: 20px;
+                        }
+
+                        .banner-offer-description{
+                            padding-bottom: 20px;
+
+                            @media(max-width: 768px){
+                            font-size: 0px;
+                        }
+                        }
+                    }
+                }
+            }
+        
+        .our-customers {
+            margin-bottom: 160px;
+            h2 {
+                font-size: 30px;
+                font-weight: 900;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .our-customers-description {
+                color: $dark-gray;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .our-customers-cards {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                .card {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    box-shadow: 13px 13px 10px 10px $light-gray;
+                    padding: 30px 20px;
+
+                    .customer-testimonial {
+                        padding: 20px 20px;
+                    }
+                    .customer-name {
+                        color: $main-color;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .our-benefits {
+            justify-content: space-evenly;
+            gap: 30px;
+            background-color: $dark-gray;
+            height: 300px;
+            margin-bottom: 100px;
+            background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
+
+                @media (max-width: 1024px) {
+                    height: auto;
+                    padding: 30px 20px;
+        
+                    h2 { margin-left: -140px; }
+        
+                    .benefits {
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+        
+                        .benefit {
+                            flex-direction: row;
+                            gap: 15px;
+                            width: calc(50% - 20px);
+                        }
+                    }
+                }
+        
+                @media (max-width: 768px) {
+                    h2 { margin-left: 0; text-align: center; }
+        
+                    .benefits {
+                        .benefit {
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+
+                h2 { margin-left: 40px; }
+                
+                            .benefits {
+                                gap: 20px;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                
+                                .benefit {
+                                    flex-direction: row;
+                                    gap: 15px;
+                                    width: calc(50% - 20px);
+                                }
+                            }
+                        
+
+                        @media (max-width: 768px) {
+                            h2 { margin-left: 0; text-align: center; }
+                
+                            .benefits {
+                                .benefit {
+                                    width: 100%;
+                                    justify-content: center;
+                                }
+                            }
+                            h2 {
+                                font-size: 20px;
+                                font-weight: 900;
+                                margin-bottom: 10px;
+                                margin-left: 100px;
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                                color: white;
+
+                            }
+                            
+                            .benefits {
+                                margin: 0 30px 0 30px ;
+                                display: flex;
+                                justify-content: space-evenly;
+
+                                .benefit {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 20px;
+                                    color: white;
+                    }
+                }
+                        
+            }
+        }
+           
+        
+      
+
+           
+
+        .log-in-modal {
+            visibility: hidden;
+        }
+
+    }
+    }

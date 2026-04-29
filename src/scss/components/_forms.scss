@@ -1,0 +1,73 @@
+.feedback-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;              
+    max-width: 600px;       
+    margin: 40px 0;
+
+    label {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; 
+        font-weight: 700;       
+        font-size: 16px;
+        color: #000;
+
+        .purple-star {
+            color: $main-color; 
+            margin-left: 4px;
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 3px solid $main-color; 
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &::placeholder {
+            color: #ccc;
+        }
+
+        &:focus {
+            border-width: 2px; 
+        }
+    }
+
+    textarea {
+        min-height: 150px; 
+        resize: vertical;  
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: -15px; 
+        min-height: 15px;  
+    }
+
+    
+    button[type="submit"] {
+        align-self: flex-start; 
+        padding: 12px 40px;
+        background-color: $main-color;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+            opacity: 0.9;
+            transform: translateY(-2px); 
+        }
+    }
+
+    .hidden {
+        display: none; 
+    }
+}

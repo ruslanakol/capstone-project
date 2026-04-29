@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  line-height: 1.5;
+  font-family: $main-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 30%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none; 
+  color: inherit;       
+}
+
+button {
+  cursor: pointer;
+}

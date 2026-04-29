@@ -1,0 +1,26 @@
+.btn--medium {
+    background-color: $main-color;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 30px;
+    border: none;
+    margin-top: 30px;
+}
+.btn--card {
+    background-color: $main-color;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 30px;
+    border: none;
+}
+.btn--long {
+    background-color: $main-color;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px 170px;
+    height: 60px;
+    border: none; 
+}
