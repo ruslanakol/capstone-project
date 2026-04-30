@@ -207,27 +207,46 @@
           <p class="copyright">© Copyright 2025</p>
     </footer>
 
-    <div id="login-modal" class="log-in-modal modal-hidden">
-    <div class="modal-content">
-        <button class="close-modal">&times;</button> <h2>Log In</h2>
-        
-        <label for="login-email">
-            Email address <span class="purple-star">*</span>
-        </label>
-        <input type="email" id="login-email" required> <label for="login-password">
-            Password <span class="purple-star">*</span>
-        </label>
-        <div class="password-wrapper">
-            <input type="password" id="login-password" required> <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" alt="Show/hide password"> </div>
+    <div id="login-modal" class="modal-overlay modal-hidden">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            
+            <h2 class="modal-title">Log In</h2>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">
+                        Email address <span class="purple-star">*</span>
+                    </label>
+                    <input type="email" id="login-email" placeholder="Your email" required>
+                    <span id="email-error" style="color: #B92770; font-size: 13px;"></span>
+                </div>
 
-        <div class="additional-buttons">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
-            <a href="#" class="forgot-password">Forgot password?</a>
+                <div class="form-group">
+                    <label for="login-password">
+                        Password <span class="purple-star">*</span>
+                    </label>
+                    <div class="password-wrapper">
+                        <input type="password" id="login-password" placeholder="Your password" required>
+                        <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" class="eye-icon" alt="Toggle password">
+                    </div>
+                </div>
+
+                <div class="additional-options">
+                    <div class="remember-me-container">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button class="btn-log-in" type="submit">LOG IN</button>
+            </form>
         </div>
-        
-        <button class="btn-log-in" type="submit">LOG IN</button>
     </div>
-</div>
+
+<script type="module" src="/dist/js/contact.js"></script>    
+<script type="module" src="/dist/js/main.js"></script>
+
 </body>
 </html>

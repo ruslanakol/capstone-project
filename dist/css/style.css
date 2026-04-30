@@ -118,7 +118,8 @@ button {
   font-size: 20px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: -40px;
 }
 .product-card .btn {
   margin-top: -10px;
@@ -416,6 +417,7 @@ body main .hero img {
 }
 body main .hero .discount-section {
   display: flex;
+  flex-direction: row;
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
@@ -496,7 +498,6 @@ body main .hero .discount-section .discount-section-left .author-content p {
 body main .hero .discount-section .discount-section-right {
   flex: 1;
   position: relative;
-  display: flex;
   align-items: stretch;
   min-height: 300px;
   overflow: hidden;
@@ -607,6 +608,10 @@ body main .travel-suitcases-section .travel-card {
   height: 500px;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.7s ease;
+}
+body main .travel-suitcases-section .travel-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 body main .travel-suitcases-section .travel-card .layout {
   position: absolute;
@@ -614,6 +619,9 @@ body main .travel-suitcases-section .travel-card .layout {
   height: 100%;
   width: 85%;
   background-color: rgba(0, 0, 0, 0.4);
+}
+body main .travel-suitcases-section .travel-card:hover img {
+  transform: scale(1.08);
 }
 body main .travel-suitcases-section .travel-card__image {
   width: 850px;
@@ -687,12 +695,12 @@ body main .selected-products, body main .new-products-arrival {
 body main .selected-products .products-grid, body main .new-products-arrival .products-grid {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 body main .selected-products .products-grid .product-card, body main .new-products-arrival .products-grid .product-card {
-  flex: 1 1 calc(25% - 30px);
-  max-width: 270px;
+  flex: 0 0 calc(25% - 15px);
+  max-width: calc(25% - 15px);
 }
 body main .selected-products h2, body main .new-products-arrival h2 {
   text-align: center;
@@ -915,84 +923,24 @@ body main .our-customers .our-customers-cards .card .customer-name {
   font-weight: 700;
 }
 body main .our-benefits {
-  justify-content: space-evenly;
-  gap: 30px;
   background-color: #504E4A;
-  height: 300px;
-  margin-bottom: 100px;
   background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
-}
-@media (max-width: 1024px) {
-  body main .our-benefits {
-    height: auto;
-    padding: 30px 20px;
-  }
-  body main .our-benefits h2 {
-    margin-left: -140px;
-  }
-  body main .our-benefits .benefits {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  body main .our-benefits .benefits .benefit {
-    flex-direction: row;
-    gap: 15px;
-    width: calc(50% - 20px);
-  }
-}
-@media (max-width: 768px) {
-  body main .our-benefits h2 {
-    margin-left: 0;
-    text-align: center;
-  }
-  body main .our-benefits .benefits .benefit {
-    width: 100%;
-    justify-content: center;
-  }
+  padding: 40px;
+  margin-bottom: 100px;
 }
 body main .our-benefits h2 {
-  margin-left: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  padding-top: 10px;
 }
 body main .our-benefits .benefits {
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-body main .our-benefits .benefits .benefit {
+  display: flex;
   flex-direction: row;
-  gap: 15px;
-  width: calc(50% - 20px);
-}
-@media (max-width: 768px) {
-  body main .our-benefits h2 {
-    margin-left: 0;
-    text-align: center;
-  }
-  body main .our-benefits .benefits .benefit {
-    width: 100%;
-    justify-content: center;
-  }
-  body main .our-benefits h2 {
-    font-size: 20px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    margin-left: 100px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: white;
-  }
-  body main .our-benefits .benefits {
-    margin: 0 30px 0 30px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  body main .our-benefits .benefits .benefit {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    color: white;
-  }
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 body main .log-in-modal {
   visibility: hidden;
@@ -1319,22 +1267,30 @@ body main .flex-container .column-container .sorting-line .results-showing {
   font-size: 15px;
   color: #504E4A;
 }
-body main .flex-container .column-container .sorting-line #sort {
-  padding: 10px 20px;
-  color: #504E4A;
-  font-size: 17px;
-  border: 2px solid #E7E8E9;
-  margin-right: 23px;
+body main .flex-container .column-container .sorting-line .page-active {
+  background-color: #B92770 !important;
+  color: white !important;
 }
 body main .flex-container .column-container .paging .paging-btns {
   display: flex;
   gap: 300px;
   justify-content: right;
 }
+body main .flex-container .column-container .paging .paging-btns .pages {
+  display: flex;
+  gap: 5px;
+}
 body main .flex-container .column-container .paging .paging-btns .pages .page {
+  padding: 10px 15px;
   border-radius: 7px;
-  border: 0 solid;
-  gap: 10px;
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+body main .flex-container .column-container .paging .paging-btns .pages .page.page-active {
+  background-color: #B92770;
+  color: white;
 }
 body main .flex-container .column-container .paging .paging-btns .pages .page-one {
   padding: 10px 15px;
@@ -1356,10 +1312,27 @@ body main .flex-container aside {
   padding: 15;
   margin-top: 50px;
 }
+body main .flex-container aside .btn {
+  margin-bottom: 50px;
+  width: 250px;
+  padding: 10px 20px;
+  margin-left: 50px;
+}
+body main .flex-container aside .filter-select {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #E7E8E9;
+}
+body main .flex-container aside .filter-select.filter-active {
+  border-color: #B92770;
+  color: #B92770;
+}
 body main .flex-container aside .search-wrapper {
   position: relative;
   width: 100%;
   max-width: 300px;
+  margin-left: 30px;
 }
 body main .flex-container aside .search-wrapper .search-input {
   width: 100%;
@@ -1732,6 +1705,10 @@ body main .product-page .more-details .tabs-content .main-content p {
 body main .product-page .more-details .tabs-content .reviews {
   padding: 10px 90px 10px 90px;
 }
+body main .product-page .more-details .tabs-content .reviews.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
 body main .product-page .more-details .tabs-content .reviews .left-side-reviews h3 {
   color: black;
   font-size: 18px;
@@ -2013,10 +1990,28 @@ body header .cart-account {
     margin-right: 30px;
   }
 }
+body header .cart-account .a-cart {
+  position: relative;
+}
 body header .cart-account .a-cart .cart-icon {
   width: 100%;
   height: auto;
   max-width: 40px;
+}
+body header .cart-account .a-cart .cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #B92770;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body header .line {
   margin: 20px auto 30px auto;

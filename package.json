@@ -8,7 +8,7 @@
     "build": "echo \"Dummy build script required for Autocode Compile\"",
     "ts-compile": "npx tsc",
     "compile": "sass --watch src/scss/main.scss:dist/css/style.css",
-  "dev": "npm run compile"
+    "dev": "npm run compile & npx tsc --watch"
   },
   "repository": {
     "type": "git",

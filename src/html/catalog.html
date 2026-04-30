@@ -52,14 +52,10 @@
         <div class="column-container">
     <section class="sorting-line">
         <p class="results-showing">Showing 1-12 Of 15 Results</p>
-        <select name="sort" id="sort">
-            <option value="default">Default Sorting</option>
-            <option value="popularity">Sort By Popularity</option>
-            <option value="rating">Sort By Average Rating</option>
-            <option value="newness">Sort By Newness</option>
-            <option value="price-low-high">Sort By Price: Low To High</option>
-            <option value="price-high-low">Sort By Price: High To Low</option>
-        </select>
+
+            <div id="not-found-popup" style="display:none; color:#B92770; font-weight:700; padding:10px 0;">
+                Product not found
+            </div>
         
     </section>
     <section class="catalog">
@@ -127,17 +123,49 @@
     </section>
     <section class="paging">
         <div class="paging-btns">
-            <div class="pages">
-            <a href="#" class="paging-btn"><button class="page page-one">1</button></a>
-            <a href="#" class="paging-btn"><button class="page page-two">2</button></a>
-            </div>
-            <a href="#">
-                <button class="paging-next">NEXT ></button>
-            </a>
+            <div class="pages"></div>
+            <button id="prev-btn" class="paging-next">< PREV</button>
+            <button id="next-btn" class="paging-next">NEXT ></button>
         </div>
     </section>
     </div>
     <aside>
+        <div class="filters">
+                <select class="filter-select" id="sort" data-filter="category">
+                    <option value="">All Categories</option>
+                    <option value="suitcases">Suitcases</option>
+                    <option value="kids' luggage">Kids' Luggage</option>
+                    <option value="luggage sets">Luggage Sets</option>
+                    <option value="carry-ons">Carry-ons</option>
+                </select>
+
+                <select class="filter-select" data-filter="color">
+                    <option value="">All Colors</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="grey">Grey</option>
+                    <option value="pink">Pink</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+
+                <select class="filter-select" data-filter="size">
+                    <option value="">All Sizes</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <select class="filter-select" data-filter="salesStatus">
+                    <option value="">All</option>
+                    <option value="true">On Sale</option>
+                    <option value="false">Full Price</option>
+                </select>
+
+                <button id="reset-filters" class="btn btn--medium">Reset</button>
+            </div>
         <div class="search-wrapper">
             <input type="search" placeholder="Search Models" class="search-input">
             <img src="/src/assets/images/icons/search.svg" alt="Search" class="search-icon">
@@ -313,27 +341,45 @@
           <p class="copyright">© Copyright 2025</p>
     </footer>
 
-    <div id="login-modal" class="log-in-modal modal-hidden">
-    <div class="modal-content">
-        <button class="close-modal">&times;</button> <h2>Log In</h2>
-        
-        <label for="login-email">
-            Email address <span class="purple-star">*</span>
-        </label>
-        <input type="email" id="login-email" required> <label for="login-password">
-            Password <span class="purple-star">*</span>
-        </label>
-        <div class="password-wrapper">
-            <input type="password" id="login-password" required> <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" alt="Show/hide password"> </div>
+    <div id="login-modal" class="modal-overlay modal-hidden">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            
+            <h2 class="modal-title">Log In</h2>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">
+                        Email address <span class="purple-star">*</span>
+                    </label>
+                    <input type="email" id="login-email" placeholder="Your email" required>
+                    <span id="email-error" style="color: #B92770; font-size: 13px;"></span>
+                </div>
 
-        <div class="additional-buttons">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
-            <a href="#" class="forgot-password">Forgot password?</a>
+                <div class="form-group">
+                    <label for="login-password">
+                        Password <span class="purple-star">*</span>
+                    </label>
+                    <div class="password-wrapper">
+                        <input type="password" id="login-password" placeholder="Your password" required>
+                        <img src="/src/assets/images/icons/eye-icon.svg" id="toggle-password" class="eye-icon" alt="Toggle password">
+                    </div>
+                </div>
+
+                <div class="additional-options">
+                    <div class="remember-me-container">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button class="btn-log-in" type="submit">LOG IN</button>
+            </form>
         </div>
-        
-        <button class="btn-log-in" type="submit">LOG IN</button>
     </div>
-</div>
+
+<script type="module" src="/dist/js/main.js"></script>
+<script type="module" src="/dist/js/catalog.js"></script>
 </body>
 </html>

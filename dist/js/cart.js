@@ -1,61 +1,49 @@
-// ============================================================
-// INTERFACES
-// ============================================================
-interface CartItem {
-    id: string;
-    name: string;
-    price: number;
-    imageUrl: string;
-    size: string;
-    color: string;
-    quantity: number;
-}
-
+"use strict";
+var _a, _b;
 // ============================================================
 // HELPERS
 // ============================================================
-const getCart = (): CartItem[] => JSON.parse(localStorage.getItem('cart') || '[]');
-const saveCart = (cart: CartItem[]): void => localStorage.setItem('cart', JSON.stringify(cart));
-
-const updateCartCounter = (): void => {
+const getCart = () => JSON.parse(localStorage.getItem('cart') || '[]');
+const saveCart = (cart) => localStorage.setItem('cart', JSON.stringify(cart));
+const updateCartCounter = () => {
     const cart = getCart();
     const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const counter = document.querySelector('.cart-counter') as HTMLElement;
+    const counter = document.querySelector('.cart-counter');
     if (counter) {
         counter.textContent = String(total);
         counter.style.display = total > 0 ? 'flex' : 'none';
     }
 };
-
 // ============================================================
 // 52, 54, 62. CALCULATE + RENDER TOTALS
 // ============================================================
-const renderTotals = (): void => {
+const renderTotals = () => {
     const cart = getCart();
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 30;
     const discount = subtotal > 3000 ? subtotal * 0.1 : 0; // 62. знижка 10%
     const total = subtotal + shipping - discount;
-
     const subtotalEl = document.getElementById('cart-subtotal');
     const shippingEl = document.getElementById('cart-shipping');
     const totalEl = document.getElementById('cart-final-total');
     const discountEl = document.getElementById('cart-discount');
-
-    if (subtotalEl) subtotalEl.textContent = `$${subtotal}`;
-    if (shippingEl) shippingEl.textContent = `$${shipping}`;
-    if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
-    if (discountEl) discountEl.textContent = discount > 0 ? `-$${discount.toFixed(2)}` : '$0';
+    if (subtotalEl)
+        subtotalEl.textContent = `$${subtotal}`;
+    if (shippingEl)
+        shippingEl.textContent = `$${shipping}`;
+    if (totalEl)
+        totalEl.textContent = `$${total.toFixed(2)}`;
+    if (discountEl)
+        discountEl.textContent = discount > 0 ? `-$${discount.toFixed(2)}` : '$0';
 };
-
 // ============================================================
 // RENDER CART TABLE
 // ============================================================
-const renderCart = (): void => {
+const renderCart = () => {
     const cart = getCart();
-    const tbody = document.getElementById('cart-table-body') as HTMLElement;
-    if (!tbody) return;
-
+    const tbody = document.getElementById('cart-table-body');
+    if (!tbody)
+        return;
     if (cart.length === 0) {
         tbody.innerHTML = `
             <tr>
@@ -66,7 +54,6 @@ const renderCart = (): void => {
         renderTotals();
         return;
     }
-
     tbody.innerHTML = cart.map((item, index) => `
         <tr class="cart-item" data-index="${index}">
             <td class="cart-item__image">
@@ -89,38 +76,34 @@ const renderCart = (): void => {
             </td>
         </tr>
     `).join('');
-
     bindCartEvents();
     renderTotals();
 };
-
 // ============================================================
 // 53, 54, 55, 56. BIND EVENTS
 // ============================================================
-const bindCartEvents = (): void => {
+const bindCartEvents = () => {
     // +/- quantity
     document.querySelectorAll('.qty-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const target = e.currentTarget as HTMLElement;
+            const target = e.currentTarget;
             const index = Number(target.dataset.index);
             const cart = getCart();
-
             if (target.classList.contains('plus')) {
                 cart[index].quantity++;
-            } else if (cart[index].quantity > 1) {
+            }
+            else if (cart[index].quantity > 1) {
                 cart[index].quantity--;
             }
-
             saveCart(cart);
             renderCart();
             updateCartCounter();
         });
     });
-
     // Delete item
     document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const target = e.currentTarget as HTMLElement;
+            const target = e.currentTarget;
             const index = Number(target.dataset.index);
             const cart = getCart();
             cart.splice(index, 1);
@@ -130,25 +113,22 @@ const bindCartEvents = (): void => {
         });
     });
 };
-
 // ============================================================
 // 57, 58. CLEAR CART
 // ============================================================
-document.getElementById('clear-btn')?.addEventListener('click', () => {
+(_a = document.getElementById('clear-btn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     saveCart([]);
     renderCart();
     updateCartCounter();
 });
-
 // ============================================================
 // 59, 60. CHECKOUT
 // ============================================================
-document.getElementById('checkout-btn')?.addEventListener('click', () => {
+(_b = document.getElementById('checkout-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
     saveCart([]);
     renderCart();
     updateCartCounter();
-
-    const tbody = document.getElementById('cart-table-body') as HTMLElement;
+    const tbody = document.getElementById('cart-table-body');
     if (tbody) {
         tbody.innerHTML = `
             <tr>
@@ -158,7 +138,6 @@ document.getElementById('checkout-btn')?.addEventListener('click', () => {
             </tr>`;
     }
 });
-
 // ============================================================
 // INIT
 // ============================================================

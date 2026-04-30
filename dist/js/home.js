@@ -1,25 +1,23 @@
+"use strict";
+var _a, _b;
 // ============================================================
 // SLIDER — infinite loop 1.2.3.4.1.2.3.4
 // ============================================================
-const track = document.querySelector('.travel-cards-track') as HTMLElement;
+const track = document.querySelector('.travel-cards-track');
 const originalCards = Array.from(document.querySelectorAll('.travel-card'));
 const cardWidth = 320;
 let currentIndex = 0;
-
 // Клонуємо картки для infinite loop
 originalCards.forEach(card => {
     track.appendChild(card.cloneNode(true));
 });
-
-const goTo = (index: number, animate: boolean = true) => {
+const goTo = (index, animate = true) => {
     track.style.transition = animate ? 'transform 0.5s ease' : 'none';
     track.style.transform = `translateX(-${index * cardWidth}px)`;
 };
-
-document.querySelector('.next-btn')?.addEventListener('click', () => {
+(_a = document.querySelector('.next-btn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     currentIndex++;
     goTo(currentIndex);
-
     if (currentIndex >= originalCards.length) {
         setTimeout(() => {
             currentIndex = 0;
@@ -27,8 +25,7 @@ document.querySelector('.next-btn')?.addEventListener('click', () => {
         }, 500);
     }
 });
-
-document.querySelector('.prev-btn')?.addEventListener('click', () => {
+(_b = document.querySelector('.prev-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
     if (currentIndex <= 0) {
         currentIndex = originalCards.length;
         goTo(currentIndex, false);
@@ -36,52 +33,48 @@ document.querySelector('.prev-btn')?.addEventListener('click', () => {
             currentIndex--;
             goTo(currentIndex);
         }, 20);
-    } else {
+    }
+    else {
         currentIndex--;
         goTo(currentIndex);
     }
 });
-
 // ============================================================
 // LOAD PRODUCTS FROM JSON
 // ============================================================
 fetch('/src/assets/data.json')
     .then(r => r.json())
     .then(json => {
-        const products = json.data;
-
-        // Selected Products
-        const selectedGrid = document.querySelector('.selected-products .products-grid') as HTMLElement;
-        if (selectedGrid) {
-            selectedGrid.innerHTML = products
-                .filter((p: any) => p.blocks.includes('Selected Products'))
-                .map((p: any) => productCard(p, 'Add to Cart'))
-                .join('');
-        }
-
-        // New Products Arrival
-        const arrivalGrid = document.querySelector('.new-products-arrival .products-grid') as HTMLElement;
-        if (arrivalGrid) {
-            arrivalGrid.innerHTML = products
-                .filter((p: any) => p.blocks.includes('New Products Arrival'))
-                .map((p: any) => productCard(p, 'View Product'))
-                .join('');
-        }
-
-        // Bind Add to Cart buttons після рендеру
-        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const id = (e.currentTarget as HTMLElement).dataset.id as string;
-                addToCart(id, products);
-            });
+    const products = json.data;
+    // Selected Products
+    const selectedGrid = document.querySelector('.selected-products .products-grid');
+    if (selectedGrid) {
+        selectedGrid.innerHTML = products
+            .filter((p) => p.blocks.includes('Selected Products'))
+            .map((p) => productCard(p, 'Add to Cart'))
+            .join('');
+    }
+    // New Products Arrival
+    const arrivalGrid = document.querySelector('.new-products-arrival .products-grid');
+    if (arrivalGrid) {
+        arrivalGrid.innerHTML = products
+            .filter((p) => p.blocks.includes('New Products Arrival'))
+            .map((p) => productCard(p, 'View Product'))
+            .join('');
+    }
+    // Bind Add to Cart buttons після рендеру
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = e.currentTarget.dataset.id;
+            addToCart(id, products);
         });
     });
-
+});
 // ============================================================
 // PRODUCT CARD TEMPLATE
 // ============================================================
-function productCard(p: any, btnText: string): string {
+function productCard(p, btnText) {
     return `
         <div class="product-card" data-id="${p.id}"
              onclick="window.location.href='/src/html/product.html?id=${p.id}'"
@@ -98,20 +91,19 @@ function productCard(p: any, btnText: string): string {
         </div>
     `;
 }
-
 // ============================================================
 // ADD TO CART + COUNTER
 // ============================================================
-function addToCart(productId: string, products: any[]): void {
-    const product = products.find((p: any) => p.id === productId);
-    if (!product) return;
-
+function addToCart(productId, products) {
+    const product = products.find((p) => p.id === productId);
+    if (!product)
+        return;
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const existing = cart.find((item: any) => item.id === productId);
-
+    const existing = cart.find((item) => item.id === productId);
     if (existing) {
         existing.quantity++;
-    } else {
+    }
+    else {
         cart.push({
             id: product.id,
             name: product.name,
@@ -122,26 +114,22 @@ function addToCart(productId: string, products: any[]): void {
             color: ''
         });
     }
-
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCounter();
 }
-
-function updateCounter(): void {
+function updateCounter() {
+    var _a;
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
-
-    let counter = document.querySelector('.cart-counter') as HTMLElement;
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    let counter = document.querySelector('.cart-counter');
     if (!counter) {
         counter = document.createElement('span');
         counter.className = 'cart-counter';
-        document.querySelector('.a-cart')?.appendChild(counter);
+        (_a = document.querySelector('.a-cart')) === null || _a === void 0 ? void 0 : _a.appendChild(counter);
     }
-
     counter.textContent = String(total);
     counter.style.display = total > 0 ? 'flex' : 'none';
 }
-
 // Відновлюємо лічильник при завантаженні
 document.addEventListener('DOMContentLoaded', () => {
     updateCounter();

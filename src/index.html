@@ -25,8 +25,10 @@
             </div>
             
             <div class="icons cart-account">
-                <img src="/src/assets/images/icons/user.svg" alt="Account">
-                <a class="a-cart" href="/src/html/cart.html"><img src="/src/assets/images/icons/shopping-cart.svg" class="cart-icon" alt="Cart" /></a>
+                <img src="/src/assets/images/icons/user.svg" id="profile-icon" alt="Account">
+                <a class="a-cart" href="/src/html/cart.html"><img src="/src/assets/images/icons/shopping-cart.svg" class="cart-icon" alt="Cart" />
+                <span class="cart-counter" style="display:none">0</span>
+                </a>
             </div>
 
             <div class="hamburger" id="hamburger-menu">
@@ -417,6 +419,7 @@
                         Email address <span class="purple-star">*</span>
                     </label>
                     <input type="email" id="login-email" placeholder="Your email" required>
+                    <span id="email-error" style="color: #B92770; font-size: 13px;"></span>
                 </div>
 
                 <div class="form-group">
@@ -441,5 +444,8 @@
             </form>
         </div>
     </div>
+
+    <script type="module" src="/dist/js/main.js"></script>
+    <script type="module" src="/dist/js/home.js"></script>
 </body>
 </html>

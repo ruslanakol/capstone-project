@@ -24,14 +24,12 @@ body {
                         font-size: 15px;
                         color: $dark-gray;
                     }
-                    #sort {
-                        padding: 10px 20px;
-                        color: $dark-gray;
-                        font-size: 17px;
-                        border: 2px solid $light-gray;
-                        margin-right: 23px;
-                        
+
+                    .page-active {
+                        background-color: $main-color !important;
+                        color: white !important;
                     }
+                    
                 }
 
                 .paging {
@@ -41,11 +39,21 @@ body {
                         justify-content: right;
 
                         .pages {
-
+                            display: flex;
+                            gap: 5px;
+                            
                             .page {
+                                padding: 10px 15px;
                                 border-radius: 7px;
-                                border: 0 solid;
-                                gap: 10px;
+                                border: 0;
+                                background-color: white;
+                                cursor: pointer;
+                                font-size: 16px;
+
+                                &.page-active {
+                                    background-color: $main-color;
+                                    color: white;
+                                }
                             }
 
                             .page-one{
@@ -74,11 +82,29 @@ body {
                 flex: 1;
                 padding: 15;
                 margin-top: 50px;
+                .btn {
+                    margin-bottom: 50px;
+                    width: 250px;
+                    padding: 10px 20px;
+                    margin-left: 50px;
+                }
+                .filter-select {
+                        width: 90%;
+                        padding: 8px;
+                        margin-bottom: 10px;
+                        border: 2px solid $light-gray;
+
+                        &.filter-active {
+                            border-color: $main-color;
+                            color: $main-color;
+                        }
+                    }
 
                 .search-wrapper {
                     position: relative; 
                     width: 100%;
-                    max-width: 300px;  
+                    max-width: 300px;
+                    margin-left: 30px;  
 
                     .search-input {
                         width: 100%;

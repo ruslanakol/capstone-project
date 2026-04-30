@@ -219,9 +219,13 @@ body {
                             padding: 10px 90px 10px 90px;
                         }
                     }
-                    .reviews {
+                    .reviews  {
                         padding: 10px 90px 10px 90px;
 
+                        &.active {
+                            display: block; // Показуємо лише активну
+                            animation: fadeIn 0.5s ease;
+                        }
                         .left-side-reviews {
                             h3 {
                                 color: black;

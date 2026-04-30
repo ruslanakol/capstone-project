@@ -91,6 +91,7 @@ body {
 
             .discount-section {
                 display: flex; 
+                flex-direction: row;
                 width: 100%;
                 max-width: 1200px; 
                 margin: 40px auto; 
@@ -176,7 +177,6 @@ body {
                 .discount-section-right {
                     flex: 1; 
                     position: relative; 
-                    display: flex;
                     align-items: stretch;
                     min-height: 300px;
                     overflow: hidden;
@@ -288,6 +288,11 @@ body {
                 height: 500px; 
                 position: relative;
                 overflow: hidden;
+                transition: box-shadow 0.7s ease;
+
+                &:hover {
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                }
 
                 .layout {
                     position: absolute;
@@ -295,7 +300,10 @@ body {
                     height: 100%;
                     width: 85%;
                     background-color: rgba(0, 0, 0, 0.4); 
-                   
+                }
+
+                &:hover img {
+                    transform: scale(1.08);
                 }
 
                 &__image {
@@ -363,6 +371,7 @@ body {
             padding: 50px 50px;
             margin-top: -40px;
 
+
             @media (max-width: 768px) {
                     color: black;
                     margin-left: -30px;
@@ -375,12 +384,12 @@ body {
             .products-grid {
             display: flex;               
             justify-content: space-between; 
-            gap: 30px;                   
+            gap: 20px;                   
             flex-wrap: wrap;             
 
             .product-card {
-                flex: 1 1 calc(25% - 30px); 
-                max-width: 270px;
+                flex: 0 0 calc(25% - 15px); // ← ось тут зміна
+                max-width: calc(25% - 15px); // ← і тут
             }
         }
         h2 {
@@ -606,95 +615,27 @@ body {
         }
 
         .our-benefits {
-            justify-content: space-evenly;
-            gap: 30px;
             background-color: $dark-gray;
-            height: 300px;
-            margin-bottom: 100px;
             background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
+            padding: 40px;
+            margin-bottom: 100px;
 
-                @media (max-width: 1024px) {
-                    height: auto;
-                    padding: 30px 20px;
-        
-                    h2 { margin-left: -140px; }
-        
-                    .benefits {
-                        gap: 20px;
-                        flex-wrap: wrap;
-                        justify-content: center;
-        
-                        .benefit {
-                            flex-direction: row;
-                            gap: 15px;
-                            width: calc(50% - 20px);
-                        }
-                    }
-                }
-        
-                @media (max-width: 768px) {
-                    h2 { margin-left: 0; text-align: center; }
-        
-                    .benefits {
-                        .benefit {
-                            width: 100%;
-                            justify-content: center;
-                        }
-                    }
-                }
+            h2 {
+                color: white;
+                font-size: 20px;
+                font-weight: 900;
+                margin-bottom: 30px;
+                padding-top: 10px;
+            }
 
-
-                h2 { margin-left: 40px; }
-                
-                            .benefits {
-                                gap: 20px;
-                                flex-wrap: wrap;
-                                justify-content: center;
-                
-                                .benefit {
-                                    flex-direction: row;
-                                    gap: 15px;
-                                    width: calc(50% - 20px);
-                                }
-                            }
-                        
-
-                        @media (max-width: 768px) {
-                            h2 { margin-left: 0; text-align: center; }
-                
-                            .benefits {
-                                .benefit {
-                                    width: 100%;
-                                    justify-content: center;
-                                }
-                            }
-                            h2 {
-                                font-size: 20px;
-                                font-weight: 900;
-                                margin-bottom: 10px;
-                                margin-left: 100px;
-                                padding-top: 30px;
-                                padding-bottom: 30px;
-                                color: white;
-
-                            }
-                            
-                            .benefits {
-                                margin: 0 30px 0 30px ;
-                                display: flex;
-                                justify-content: space-evenly;
-
-                                .benefit {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 20px;
-                                    color: white;
-                    }
-                }
-                        
+            .benefits {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                gap: 20px;
             }
         }
-           
         
       
 
