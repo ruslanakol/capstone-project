@@ -1,6 +1,4 @@
-// ============================================================
-// INTERFACES
-// ============================================================
+
 interface Product {
     id: string;
     name: string;
@@ -15,15 +13,11 @@ interface Product {
     blocks: string[];
 }
 
-// ============================================================
-// STATE
-// ============================================================
 let allProducts: Product[] = [];
 let filteredProducts: Product[] = [];
 let currentPage = 1;
 const PER_PAGE = 12;
 
-// Active filters
 let activeFilters = {
     category: '',
     color: '',
@@ -31,9 +25,6 @@ let activeFilters = {
     salesStatus: '',
 };
 
-// ============================================================
-// LOAD JSON
-// ============================================================
 fetch('/src/assets/data.json')
     .then(r => r.json())
     .then(json => {
@@ -43,9 +34,6 @@ fetch('/src/assets/data.json')
         renderTopSets();
     });
 
-// ============================================================
-// 29-33. FILTERS
-// ============================================================
 const filterSelects = document.querySelectorAll('.filter-select');
 
 filterSelects.forEach(select => {
@@ -54,7 +42,7 @@ filterSelects.forEach(select => {
         const key = el.dataset.filter as keyof typeof activeFilters;
         activeFilters[key] = el.value;
 
-        // 33. Highlight active filter
+
         if (el.value !== '') {
             el.classList.add('filter-active');
         } else {
@@ -75,14 +63,10 @@ function applyFilters(): void {
         return true;
     });
 
-    // 34. Apply sorting
     applySort();
     renderGrid();
 }
 
-// ============================================================
-// 31. RESET FILTERS
-// ============================================================
 document.getElementById('reset-filters')?.addEventListener('click', () => {
     activeFilters = { category: '', color: '', size: '', salesStatus: '' };
 
@@ -97,9 +81,6 @@ document.getElementById('reset-filters')?.addEventListener('click', () => {
     renderGrid();
 });
 
-// ============================================================
-// 34. SORTING
-// ============================================================
 document.getElementById('sort')?.addEventListener('change', () => {
     applySort();
     renderGrid();
@@ -119,9 +100,7 @@ function applySort(): void {
     }
 }
 
-// ============================================================
-// 35-36. SEARCH
-// ============================================================
+
 document.querySelector('.search-input')?.addEventListener('input', (e) => {
     const query = (e.target as HTMLInputElement).value.trim().toLowerCase();
 
@@ -139,7 +118,7 @@ document.querySelector('.search-input')?.addEventListener('input', (e) => {
         filteredProducts = [];
         renderGrid();
     } else if (results.length === 1) {
-        // 36. Single result — go to product page
+        
         window.location.href = `/src/html/product.html?id=${results[0].id}`;
     } else {
         hideNotFound();
@@ -159,9 +138,6 @@ function hideNotFound(): void {
     if (popup) popup.style.display = 'none';
 }
 
-// ============================================================
-// 37-39. PAGINATION + RENDER GRID
-// ============================================================
 function renderGrid(): void {
     const grid = document.getElementById('catalog-grid') as HTMLElement;
     if (!grid) return;
@@ -172,7 +148,7 @@ function renderGrid(): void {
     const end = Math.min(start + PER_PAGE, total);
     const pageProducts = filteredProducts.slice(start, end);
 
-    // 39. Showing X-Y of Z
+    
     const resultsEl = document.querySelector('.results-showing') as HTMLElement;
     if (resultsEl) {
         resultsEl.textContent = total > 0
@@ -180,7 +156,7 @@ function renderGrid(): void {
             : 'No products found';
     }
 
-    // Render cards
+    
     grid.innerHTML = pageProducts.map(p => `
         <article class="product-card" 
                  onclick="window.location.href='/src/html/product.html?id=${p.id}'"
@@ -199,7 +175,7 @@ function renderGrid(): void {
         </article>
     `).join('');
 
-    // Bind add to cart
+    
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -208,13 +184,10 @@ function renderGrid(): void {
         });
     });
 
-    // 38. Render pagination
+    
     renderPagination(totalPages);
 }
 
-// ============================================================
-// PAGINATION BUTTONS
-// ============================================================
 function renderPagination(totalPages: number): void {
     const pagesEl = document.querySelector('.pages') as HTMLElement;
     const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
@@ -247,12 +220,9 @@ document.getElementById('next-btn')?.addEventListener('click', () => {
     if (currentPage < totalPages) { currentPage++; renderGrid(); }
 });
 
-// ============================================================
-// 40. TOP BEST SETS — random from luggage sets
-// ============================================================
 function renderTopSets(): void {
     const sets = allProducts.filter(p => p.category === 'luggage sets');
-    const random = sets.sort(() => Math.random() - 0.5).slice(0, 3);
+    const random = [...sets].sort(() => Math.random() - 0.5).slice(0, 3);
     const container = document.getElementById('top-sets') as HTMLElement;
     if (!container || random.length === 0) return;
 
@@ -270,14 +240,11 @@ function renderTopSets(): void {
     `).join('');
 }
 
-// ============================================================
-// ADD TO CART
-// ============================================================
 function addToCart(productId: string): void {
     const product = allProducts.find(p => p.id === productId);
     if (!product) return;
 
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const existing = cart.find((item: any) => item.id === productId);
 
     if (existing) {
@@ -296,7 +263,7 @@ function addToCart(productId: string): void {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Update counter
+   
     const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
     const counter = document.querySelector('.cart-counter') as HTMLElement;
     if (counter) {

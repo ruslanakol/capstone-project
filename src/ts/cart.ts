@@ -1,6 +1,3 @@
-// ============================================================
-// INTERFACES
-// ============================================================
 interface CartItem {
     id: string;
     name: string;
@@ -11,10 +8,7 @@ interface CartItem {
     quantity: number;
 }
 
-// ============================================================
-// HELPERS
-// ============================================================
-const getCart = (): CartItem[] => JSON.parse(localStorage.getItem('cart') || '[]');
+const getCart = (): CartItem[] => JSON.parse(localStorage.getItem('cart') ?? '[]');
 const saveCart = (cart: CartItem[]): void => localStorage.setItem('cart', JSON.stringify(cart));
 
 const updateCartCounter = (): void => {
@@ -27,14 +21,11 @@ const updateCartCounter = (): void => {
     }
 };
 
-// ============================================================
-// 52, 54, 62. CALCULATE + RENDER TOTALS
-// ============================================================
 const renderTotals = (): void => {
     const cart = getCart();
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 30;
-    const discount = subtotal > 3000 ? subtotal * 0.1 : 0; // 62. знижка 10%
+    const discount = subtotal > 3000 ? subtotal * 0.1 : 0;
     const total = subtotal + shipping - discount;
 
     const subtotalEl = document.getElementById('cart-subtotal');
@@ -48,9 +39,6 @@ const renderTotals = (): void => {
     if (discountEl) discountEl.textContent = discount > 0 ? `-$${discount.toFixed(2)}` : '$0';
 };
 
-// ============================================================
-// RENDER CART TABLE
-// ============================================================
 const renderCart = (): void => {
     const cart = getCart();
     const tbody = document.getElementById('cart-table-body') as HTMLElement;
@@ -94,11 +82,9 @@ const renderCart = (): void => {
     renderTotals();
 };
 
-// ============================================================
-// 53, 54, 55, 56. BIND EVENTS
-// ============================================================
+
 const bindCartEvents = (): void => {
-    // +/- quantity
+
     document.querySelectorAll('.qty-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const target = e.currentTarget as HTMLElement;
@@ -117,7 +103,6 @@ const bindCartEvents = (): void => {
         });
     });
 
-    // Delete item
     document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const target = e.currentTarget as HTMLElement;
@@ -131,18 +116,12 @@ const bindCartEvents = (): void => {
     });
 };
 
-// ============================================================
-// 57, 58. CLEAR CART
-// ============================================================
 document.getElementById('clear-btn')?.addEventListener('click', () => {
     saveCart([]);
     renderCart();
     updateCartCounter();
 });
 
-// ============================================================
-// 59, 60. CHECKOUT
-// ============================================================
 document.getElementById('checkout-btn')?.addEventListener('click', () => {
     saveCart([]);
     renderCart();
@@ -159,9 +138,6 @@ document.getElementById('checkout-btn')?.addEventListener('click', () => {
     }
 });
 
-// ============================================================
-// INIT
-// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
     updateCartCounter();

@@ -1,4 +1,3 @@
-// modal log-in
 
 const loginModal = document.getElementById('login-modal') as HTMLElement;
 const profileIcon = document.getElementById('profile-icon') as HTMLElement;
@@ -56,12 +55,8 @@ loginForm?.addEventListener('submit', (e) => {
     loginForm.reset();
 });
 
-
-
-
-// cart counter
 document.addEventListener('DOMContentLoaded', () => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
     
     let counter = document.querySelector('.cart-counter') as HTMLElement;
@@ -75,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     counter.style.display = total > 0 ? 'flex' : 'none';
 });
 
-const cart2 = JSON.parse(localStorage.getItem('cart') || '[]');
+const cart2 = JSON.parse(localStorage.getItem('cart') ?? '[]');
 const total2 = cart2.reduce((sum: number, item: any) => sum + item.quantity, 0);
 const counter2 = document.querySelector('.cart-counter') as HTMLElement;
 if (counter2) {
@@ -83,13 +78,8 @@ if (counter2) {
     counter2.style.display = total2 > 0 ? 'flex' : 'none';
 }
 
-
-// ============================================================
-// ADD TO CART FUNCTION
-// ============================================================
-
 export function updateCounter(): void {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
     
     let counter = document.querySelector('.cart-counter') as HTMLElement;
@@ -107,7 +97,7 @@ export function updateCounter(): void {
 export function addToCart(productId: string, products: any[]): void {
        const product = products.find((p: any) => p.id === productId);
     if (!product) return;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const existing = cart.find((item: any) => item.id === productId);
     if (existing) {
         existing.quantity++;

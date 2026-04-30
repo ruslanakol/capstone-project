@@ -26,13 +26,13 @@ body {
 
             .cart-table {
                 width: 80%;
-                border-collapse: collapse; // Прибирає подвійні рамки
+                border-collapse: collapse; 
                 margin-top: 40px;
                 margin-left: auto;
                 margin-right: auto;
 
                 thead {
-                    background-color: #55524E; // Темний колір з макета
+                    background-color: #55524E; 
                     color: #fff;
                     
                     th {
@@ -45,7 +45,7 @@ body {
 
                 tbody {
                     tr {
-                        border-bottom: 2px solid $main-color; // Твоя фірмова рожева лінія
+                        border-bottom: 2px solid $main-color; 
                     }
 
                     td {
@@ -57,7 +57,7 @@ body {
                 }
 
                 &__image img {
-                    width: 80px; // Компактний розмір для таблиці
+                    width: 80px; 
                     height: auto;
                 }
 

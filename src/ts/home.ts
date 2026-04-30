@@ -1,12 +1,9 @@
-// ============================================================
-// SLIDER — infinite loop 1.2.3.4.1.2.3.4
-// ============================================================
+
 const track = document.querySelector('.travel-cards-track') as HTMLElement;
 const originalCards = Array.from(document.querySelectorAll('.travel-card'));
 const cardWidth = 320;
 let currentIndex = 0;
 
-// Клонуємо картки для infinite loop
 originalCards.forEach(card => {
     track.appendChild(card.cloneNode(true));
 });
@@ -42,15 +39,11 @@ document.querySelector('.prev-btn')?.addEventListener('click', () => {
     }
 });
 
-// ============================================================
-// LOAD PRODUCTS FROM JSON
-// ============================================================
 fetch('/src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         const products = json.data;
 
-        // Selected Products
         const selectedGrid = document.querySelector('.selected-products .products-grid') as HTMLElement;
         if (selectedGrid) {
             selectedGrid.innerHTML = products
@@ -59,7 +52,6 @@ fetch('/src/assets/data.json')
                 .join('');
         }
 
-        // New Products Arrival
         const arrivalGrid = document.querySelector('.new-products-arrival .products-grid') as HTMLElement;
         if (arrivalGrid) {
             arrivalGrid.innerHTML = products
@@ -68,19 +60,15 @@ fetch('/src/assets/data.json')
                 .join('');
         }
 
-        // Bind Add to Cart buttons після рендеру
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const id = (e.currentTarget as HTMLElement).dataset.id as string;
-                addToCart(id, products);
+                addToCartHome(id, products);
             });
         });
     });
 
-// ============================================================
-// PRODUCT CARD TEMPLATE
-// ============================================================
 function productCard(p: any, btnText: string): string {
     return `
         <div class="product-card" data-id="${p.id}"
@@ -99,14 +87,11 @@ function productCard(p: any, btnText: string): string {
     `;
 }
 
-// ============================================================
-// ADD TO CART + COUNTER
-// ============================================================
-function addToCart(productId: string, products: any[]): void {
+function addToCartHome(productId: string, products: any[]): void {
     const product = products.find((p: any) => p.id === productId);
     if (!product) return;
 
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const existing = cart.find((item: any) => item.id === productId);
 
     if (existing) {
@@ -128,7 +113,7 @@ function addToCart(productId: string, products: any[]): void {
 }
 
 function updateCounter(): void {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
     const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
 
     let counter = document.querySelector('.cart-counter') as HTMLElement;
@@ -142,7 +127,6 @@ function updateCounter(): void {
     counter.style.display = total > 0 ? 'flex' : 'none';
 }
 
-// Відновлюємо лічильник при завантаженні
 document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
 });

@@ -1,9 +1,6 @@
 "use strict";
 var _a, _b;
-// ============================================================
-// HELPERS
-// ============================================================
-const getCart = () => JSON.parse(localStorage.getItem('cart') || '[]');
+const getCart = () => { var _a; return JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]'); };
 const saveCart = (cart) => localStorage.setItem('cart', JSON.stringify(cart));
 const updateCartCounter = () => {
     const cart = getCart();
@@ -14,14 +11,11 @@ const updateCartCounter = () => {
         counter.style.display = total > 0 ? 'flex' : 'none';
     }
 };
-// ============================================================
-// 52, 54, 62. CALCULATE + RENDER TOTALS
-// ============================================================
 const renderTotals = () => {
     const cart = getCart();
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 30;
-    const discount = subtotal > 3000 ? subtotal * 0.1 : 0; // 62. знижка 10%
+    const discount = subtotal > 3000 ? subtotal * 0.1 : 0;
     const total = subtotal + shipping - discount;
     const subtotalEl = document.getElementById('cart-subtotal');
     const shippingEl = document.getElementById('cart-shipping');
@@ -36,9 +30,6 @@ const renderTotals = () => {
     if (discountEl)
         discountEl.textContent = discount > 0 ? `-$${discount.toFixed(2)}` : '$0';
 };
-// ============================================================
-// RENDER CART TABLE
-// ============================================================
 const renderCart = () => {
     const cart = getCart();
     const tbody = document.getElementById('cart-table-body');
@@ -79,11 +70,7 @@ const renderCart = () => {
     bindCartEvents();
     renderTotals();
 };
-// ============================================================
-// 53, 54, 55, 56. BIND EVENTS
-// ============================================================
 const bindCartEvents = () => {
-    // +/- quantity
     document.querySelectorAll('.qty-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const target = e.currentTarget;
@@ -100,7 +87,6 @@ const bindCartEvents = () => {
             updateCartCounter();
         });
     });
-    // Delete item
     document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const target = e.currentTarget;
@@ -113,17 +99,11 @@ const bindCartEvents = () => {
         });
     });
 };
-// ============================================================
-// 57, 58. CLEAR CART
-// ============================================================
 (_a = document.getElementById('clear-btn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     saveCart([]);
     renderCart();
     updateCartCounter();
 });
-// ============================================================
-// 59, 60. CHECKOUT
-// ============================================================
 (_b = document.getElementById('checkout-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
     saveCart([]);
     renderCart();
@@ -138,9 +118,6 @@ const bindCartEvents = () => {
             </tr>`;
     }
 });
-// ============================================================
-// INIT
-// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
     updateCartCounter();

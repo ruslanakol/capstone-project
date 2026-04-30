@@ -84,7 +84,7 @@ body {
                 @media (max-width: 768px) {
                     flex: 1;
                     display: flex;
-                    justify-content: center; // Центруємо лого на мобілці
+                    justify-content: center; 
                 }
             }
         
@@ -164,7 +164,7 @@ body {
                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
                     @media (max-width: 768px) {
-                        flex-direction: column; // Посилання стають в стовпчик
+                        flex-direction: column;
                         align-items: center;
                         padding: 20px 0;
                     }

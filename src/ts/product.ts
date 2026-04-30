@@ -1,6 +1,4 @@
-// ============================================================
-// INTERFACES
-// ============================================================
+
 interface Product {
     id: string;
     name: string;
@@ -20,11 +18,10 @@ interface CartItem {
     price: number;
     imageUrl: string;
     quantity: number;
+    size: string;  
+    color: string;
 }
 
-// ============================================================
-// 41. LOAD PRODUCT FROM JSON BY ID
-// ============================================================
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
@@ -36,15 +33,11 @@ fetch('/src/data/products.json')
 
         if (product) loadProduct(product);
 
-        // 45. You May Also Like — 4 random products
         const others = products.filter(p => p.id !== productId);
-        const random = others.sort(() => Math.random() - 0.5).slice(0, 4);
+        const random = [...others].sort(() => Math.random() - 0.5).slice(0, 4);
         renderYouMayLike(random);
     });
 
-// ============================================================
-// 41. RENDER PRODUCT DATA
-// ============================================================
 function loadProduct(p: Product): void {
     const title = document.getElementById('product-title');
     const price = document.getElementById('product-price');
@@ -55,9 +48,6 @@ function loadProduct(p: Product): void {
     if (image) image.src = p.imageUrl;
 }
 
-// ============================================================
-// 42. QUANTITY SELECTOR
-// ============================================================
 const qtyInput = document.getElementById('product-qty') as HTMLInputElement;
 
 document.getElementById('increase-qty')?.addEventListener('click', () => {
@@ -70,9 +60,18 @@ document.getElementById('decrease-qty')?.addEventListener('click', () => {
     }
 });
 
-// ============================================================
-// 43. ADD TO CART
-// ============================================================
+
+const updateProductCounter = (): void => {
+    const cart: CartItem[] = JSON.parse(localStorage.getItem('cart') ?? '[]');
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const counter = document.querySelector('.cart-counter') as HTMLElement;
+    if (counter) {
+        counter.textContent = String(total);
+        counter.style.display = total > 0 ? 'flex' : 'none';
+    }
+};
+
+
 document.getElementById('add-to-cart')?.addEventListener('click', () => {
     if (!productId) return;
 
@@ -82,7 +81,7 @@ document.getElementById('add-to-cart')?.addEventListener('click', () => {
             const product: Product = json.data.find((p: Product) => p.id === productId);
             if (!product) return;
 
-            const cart: CartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
+            const cart: CartItem[] = JSON.parse(localStorage.getItem('cart') ?? '[]');
             const qty = Number(qtyInput.value);
             const existing = cart.find(item => item.id === productId);
 
@@ -94,7 +93,9 @@ document.getElementById('add-to-cart')?.addEventListener('click', () => {
                     name: product.name,
                     price: product.price,
                     imageUrl: product.imageUrl,
-                    quantity: qty
+                    quantity: qty,
+                    size: '',    
+                    color: ''
                 });
             }
 
@@ -103,19 +104,7 @@ document.getElementById('add-to-cart')?.addEventListener('click', () => {
         });
 });
 
-const updateCartCounter = (): void => {
-    const cart: CartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
-    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const counter = document.querySelector('.cart-counter') as HTMLElement;
-    if (counter) {
-        counter.textContent = String(total);
-        counter.style.display = total > 0 ? 'flex' : 'none';
-    }
-};
 
-// ============================================================
-// 44. REVIEW FORM
-// ============================================================
 document.querySelector('.form-review')?.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -137,9 +126,6 @@ document.querySelector('.form-review')?.addEventListener('submit', (e) => {
     (document.querySelector('.form-review') as HTMLFormElement).reset();
 });
 
-// ============================================================
-// 45. YOU MAY ALSO LIKE
-// ============================================================
 function renderYouMayLike(products: Product[]): void {
     const grid = document.querySelector('.you-may-like .products-grid') as HTMLElement;
     if (!grid) return;
@@ -159,9 +145,6 @@ function renderYouMayLike(products: Product[]): void {
     `).join('');
 }
 
-// ============================================================
-// TABS
-// ============================================================
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -173,5 +156,5 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     });
 });
 
-// Init
-updateCartCounter();
+
+updateProductCounter();

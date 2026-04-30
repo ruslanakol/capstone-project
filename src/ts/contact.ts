@@ -5,8 +5,6 @@ const successMsg = document.getElementById('form-success') as HTMLElement;
 const errorMsg = document.getElementById('form-error') as HTMLElement;
 
 
-
-// Interface — показує що знаєш TS
 interface ContactForm {
     name: string;
     email: string;
@@ -14,7 +12,6 @@ interface ContactForm {
     message: string;
 }
 
-// 47. Валідація email в реальному часі
 inputEmail.addEventListener('input', () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     emailError.textContent = emailRegex.test(inputEmail.value) 
@@ -22,7 +19,6 @@ inputEmail.addEventListener('input', () => {
         : 'Please enter a valid email';
 });
 
-// 48 + 49. Сабміт
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 

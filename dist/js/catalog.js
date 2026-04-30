@@ -1,22 +1,15 @@
 "use strict";
 var _a, _b, _c, _d, _e;
-// ============================================================
-// STATE
-// ============================================================
 let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 const PER_PAGE = 12;
-// Active filters
 let activeFilters = {
     category: '',
     color: '',
     size: '',
     salesStatus: '',
 };
-// ============================================================
-// LOAD JSON
-// ============================================================
 fetch('/src/assets/data.json')
     .then(r => r.json())
     .then(json => {
@@ -25,16 +18,12 @@ fetch('/src/assets/data.json')
     renderGrid();
     renderTopSets();
 });
-// ============================================================
-// 29-33. FILTERS
-// ============================================================
 const filterSelects = document.querySelectorAll('.filter-select');
 filterSelects.forEach(select => {
     select.addEventListener('change', (e) => {
         const el = e.currentTarget;
         const key = el.dataset.filter;
         activeFilters[key] = el.value;
-        // 33. Highlight active filter
         if (el.value !== '') {
             el.classList.add('filter-active');
         }
@@ -57,13 +46,9 @@ function applyFilters() {
             return false;
         return true;
     });
-    // 34. Apply sorting
     applySort();
     renderGrid();
 }
-// ============================================================
-// 31. RESET FILTERS
-// ============================================================
 (_a = document.getElementById('reset-filters')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     activeFilters = { category: '', color: '', size: '', salesStatus: '' };
     filterSelects.forEach(select => {
@@ -75,9 +60,6 @@ function applyFilters() {
     currentPage = 1;
     renderGrid();
 });
-// ============================================================
-// 34. SORTING
-// ============================================================
 (_b = document.getElementById('sort')) === null || _b === void 0 ? void 0 : _b.addEventListener('change', () => {
     applySort();
     renderGrid();
@@ -97,9 +79,6 @@ function applySort() {
         filteredProducts.sort((a, b) => b.rating - a.rating);
     }
 }
-// ============================================================
-// 35-36. SEARCH
-// ============================================================
 (_c = document.querySelector('.search-input')) === null || _c === void 0 ? void 0 : _c.addEventListener('input', (e) => {
     const query = e.target.value.trim().toLowerCase();
     if (!query) {
@@ -115,7 +94,6 @@ function applySort() {
         renderGrid();
     }
     else if (results.length === 1) {
-        // 36. Single result — go to product page
         window.location.href = `/src/html/product.html?id=${results[0].id}`;
     }
     else {
@@ -135,9 +113,6 @@ function hideNotFound() {
     if (popup)
         popup.style.display = 'none';
 }
-// ============================================================
-// 37-39. PAGINATION + RENDER GRID
-// ============================================================
 function renderGrid() {
     const grid = document.getElementById('catalog-grid');
     if (!grid)
@@ -147,14 +122,12 @@ function renderGrid() {
     const start = (currentPage - 1) * PER_PAGE;
     const end = Math.min(start + PER_PAGE, total);
     const pageProducts = filteredProducts.slice(start, end);
-    // 39. Showing X-Y of Z
     const resultsEl = document.querySelector('.results-showing');
     if (resultsEl) {
         resultsEl.textContent = total > 0
             ? `Showing ${start + 1}–${end} of ${total} results`
             : 'No products found';
     }
-    // Render cards
     grid.innerHTML = pageProducts.map(p => `
         <article class="product-card" 
                  onclick="window.location.href='/src/html/product.html?id=${p.id}'"
@@ -172,7 +145,6 @@ function renderGrid() {
             </div>
         </article>
     `).join('');
-    // Bind add to cart
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -180,12 +152,8 @@ function renderGrid() {
             addToCart(id);
         });
     });
-    // 38. Render pagination
     renderPagination(totalPages);
 }
-// ============================================================
-// PAGINATION BUTTONS
-// ============================================================
 function renderPagination(totalPages) {
     const pagesEl = document.querySelector('.pages');
     const prevBtn = document.getElementById('prev-btn');
@@ -220,12 +188,9 @@ function renderPagination(totalPages) {
         renderGrid();
     }
 });
-// ============================================================
-// 40. TOP BEST SETS — random from luggage sets
-// ============================================================
 function renderTopSets() {
     const sets = allProducts.filter(p => p.category === 'luggage sets');
-    const random = sets.sort(() => Math.random() - 0.5).slice(0, 3);
+    const random = [...sets].sort(() => Math.random() - 0.5).slice(0, 3);
     const container = document.getElementById('top-sets');
     if (!container || random.length === 0)
         return;
@@ -242,14 +207,12 @@ function renderTopSets() {
         </div>
     `).join('');
 }
-// ============================================================
-// ADD TO CART
-// ============================================================
 function addToCart(productId) {
+    var _a;
     const product = allProducts.find(p => p.id === productId);
     if (!product)
         return;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]');
     const existing = cart.find((item) => item.id === productId);
     if (existing) {
         existing.quantity++;
@@ -266,7 +229,6 @@ function addToCart(productId) {
         });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    // Update counter
     const total = cart.reduce((sum, item) => sum + item.quantity, 0);
     const counter = document.querySelector('.cart-counter');
     if (counter) {

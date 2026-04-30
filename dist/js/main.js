@@ -1,4 +1,4 @@
-// modal log-in
+var _a;
 const loginModal = document.getElementById('login-modal');
 const profileIcon = document.getElementById('profile-icon');
 const closeModalBtn = document.getElementById('close-modal');
@@ -45,48 +45,45 @@ loginForm === null || loginForm === void 0 ? void 0 : loginForm.addEventListener
     closeModal();
     loginForm.reset();
 });
-// cart counter
 document.addEventListener('DOMContentLoaded', () => {
-    var _a;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    var _a, _b;
+    const cart = JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]');
     const total = cart.reduce((sum, item) => sum + item.quantity, 0);
     let counter = document.querySelector('.cart-counter');
     if (!counter) {
         counter = document.createElement('span');
         counter.className = 'cart-counter';
-        (_a = document.querySelector('.a-cart')) === null || _a === void 0 ? void 0 : _a.appendChild(counter);
+        (_b = document.querySelector('.a-cart')) === null || _b === void 0 ? void 0 : _b.appendChild(counter);
     }
     counter.textContent = String(total);
     counter.style.display = total > 0 ? 'flex' : 'none';
 });
-const cart2 = JSON.parse(localStorage.getItem('cart') || '[]');
+const cart2 = JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]');
 const total2 = cart2.reduce((sum, item) => sum + item.quantity, 0);
 const counter2 = document.querySelector('.cart-counter');
 if (counter2) {
     counter2.textContent = String(total2);
     counter2.style.display = total2 > 0 ? 'flex' : 'none';
 }
-// ============================================================
-// ADD TO CART FUNCTION
-// ============================================================
 export function updateCounter() {
-    var _a;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    var _a, _b;
+    const cart = JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]');
     const total = cart.reduce((sum, item) => sum + item.quantity, 0);
     let counter = document.querySelector('.cart-counter');
     if (!counter) {
         counter = document.createElement('span');
         counter.className = 'cart-counter';
-        (_a = document.querySelector('.a-cart')) === null || _a === void 0 ? void 0 : _a.appendChild(counter);
+        (_b = document.querySelector('.a-cart')) === null || _b === void 0 ? void 0 : _b.appendChild(counter);
     }
     counter.textContent = String(total);
     counter.style.display = total > 0 ? 'flex' : 'none';
 }
 export function addToCart(productId, products) {
+    var _a;
     const product = products.find((p) => p.id === productId);
     if (!product)
         return;
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse((_a = localStorage.getItem('cart')) !== null && _a !== void 0 ? _a : '[]');
     const existing = cart.find((item) => item.id === productId);
     if (existing) {
         existing.quantity++;

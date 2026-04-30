@@ -4,14 +4,12 @@ const inputEmail = document.getElementById('user-email');
 const emailError = document.getElementById('email-error');
 const successMsg = document.getElementById('form-success');
 const errorMsg = document.getElementById('form-error');
-// 47. Валідація email в реальному часі
 inputEmail.addEventListener('input', () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     emailError.textContent = emailRegex.test(inputEmail.value)
         ? ''
         : 'Please enter a valid email';
 });
-// 48 + 49. Сабміт
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = {
