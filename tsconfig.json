@@ -18,7 +18,8 @@
     "src/ts/catalog.ts",
     "src/ts/contact.ts",
     "src/ts/product.ts",
-    "src/ts/cart-utils.ts"
+    "src/ts/cart-utils.ts",
+    "src/ts/chat-assistant.ts"
    
   ],
   "exclude": [

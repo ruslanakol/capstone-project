@@ -1,12 +1,10 @@
 # Best Shop — Multi-page E-commerce Website
 **Author:** Ruslana Kolykhan
 
-A fully responsive online suitcase store built as a final project. The application features dynamic data loading, real-time cart updates, and AI-powered interactions.
+A fully responsive online suitcase store built as a final project. The application features dynamic data loading, real-time cart updates.
 
 ## Project Status & Self-Check
-- **Autocode Quality Score:** 82/100
-- **Final Checklist:** [Впиши цифру, наприклад: 60] out of 64 points achieved.
-- **AI Integration:** Implemented Smart Support Chat via Tidio.
+- **Final Checklist:** 59 out of 64 points achieved.
 
 ## Deployment
 **Live Demo:** 
@@ -27,3 +25,9 @@ A fully responsive online suitcase store built as a final project. The applicati
    ```bash
    npm install
    npm run dev
+   ```
+## Smart Chat Assistant
+
+The project includes an interactive chat assistant with:
+- **Suitcase recommendation quiz** — 5 questions about travel habits and preferences with personalized suggestions based on answers
+- **FAQ responses** — instant answers to common questions about price, size, shipping and returns

@@ -102,7 +102,8 @@ button {
   width: 100%;
   height: 100%;
   max-width: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
   overflow: hidden;
@@ -124,13 +125,15 @@ button {
 .product-card .btn {
   margin-top: -10px;
   align-self: center;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
 .catalog__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   row-gap: 50px;
   max-width: 1200px;
   margin: 40px auto;
@@ -170,6 +173,9 @@ button {
   font-size: 14px;
   outline: none;
   transition: border-color 0.3s ease;
+}
+.feedback-form input::-moz-placeholder, .feedback-form textarea::-moz-placeholder {
+  color: #ccc;
 }
 .feedback-form input::placeholder, .feedback-form textarea::placeholder {
   color: #ccc;
@@ -472,7 +478,8 @@ body main .hero .discount-section .discount-section-left .author img {
   width: 180px;
   height: auto;
   flex-shrink: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   margin: 0 0;
 }
@@ -518,7 +525,8 @@ body main .hero .discount-section .discount-section-right img {
     height: auto;
     max-width: 500px;
     display: flex;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 body main .hero .discount-section .discount-section-right .layout {
@@ -633,7 +641,8 @@ body main .travel-suitcases-section .travel-card__image {
 body main .travel-suitcases-section .travel-card__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 body main .travel-suitcases-section .travel-card .card-content {
@@ -753,7 +762,8 @@ body main .banner-home .banner-content img {
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 body main .banner-home .banner-content .layout {
@@ -1021,7 +1031,8 @@ body main .new-arrivals .new-arrival-right-side img {
   width: 100%;
   max-width: 600px;
   flex-shrink: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   margin-left: -50px;
 }
@@ -1497,6 +1508,7 @@ body main .cart-products .flex-container .total-table .total {
   border-bottom: none;
 }
 body main .cart-products .flex-container .total-table .btn {
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 20px;
   padding: 12px 40px;
@@ -1538,7 +1550,8 @@ body main .product-page .product-container .left-side .additional-images {
 body main .product-page .product-container .left-side .additional-images .additional-image {
   width: 170px;
   height: 170px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   cursor: pointer;
   border: 1px solid white;
 }
@@ -1612,6 +1625,7 @@ body main .product-page .product-container .right-side .add-to-cart .quantity-se
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 20px;
   border: 2px solid #B92770;
@@ -1638,7 +1652,9 @@ body main .product-page .product-container .right-side .add-to-cart .quantity-se
   font-weight: 700;
   background: transparent;
   outline: none;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 body main .product-page .product-container .right-side .add-to-cart .btn--long {
   margin-right: 105px;
@@ -1830,6 +1846,7 @@ body main .product-page .more-details #reviews .right-side-reviews .form-review 
   padding: 15px 30px;
   font-weight: 700;
   cursor: pointer;
+  width: -moz-fit-content;
   width: fit-content;
   transition: opacity 0.3s;
 }
@@ -1879,7 +1896,8 @@ body main .you-may-like .products-grid .product-card {
 body main .you-may-like .products-grid .product-card__image img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body {
@@ -1953,7 +1971,8 @@ body header .icons-logo .logo .a-logo {
 body header .icons-logo .logo .a-logo .logo-img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   flex-shrink: 0;
 }
 body header .icons-logo .logo .a-logo .logo-text {
@@ -2144,6 +2163,4 @@ footer .copyright {
   text-align: center;
   margin: 100px 0 30px 0;
   color: #727174;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

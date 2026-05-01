@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "ts-compile": "npx tsc",
     "compile": "sass --watch src/scss/main.scss:dist/css/main.css",
-    "dev": "npm run compile & npx tsc --watch",
+    "ts-watch": "npx tsc --watch",
+    "server": "live-server --port=5500 --open=index.html",
+    "dev": "npm run compile & npm run ts-watch & npm run server",
     "lint": "eslint src/ts/**/*.ts && stylelint src/scss/**/*.scss"
   },
   "repository": {

@@ -25,7 +25,7 @@ interface CartItem {
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
-fetch('/src/data/products.json')
+fetch('/src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         const products: Product[] = json.data;
@@ -100,7 +100,7 @@ document.getElementById('add-to-cart')?.addEventListener('click', () => {
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCounter();
+            updateProductCounter();
         });
 });
 
