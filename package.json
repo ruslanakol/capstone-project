@@ -7,18 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Dummy build script required for Autocode Compile\"",
     "ts-compile": "npx tsc",
-    "compile": "sass --watch src/scss/main.scss:dist/css/style.css",
-    "dev": "npm run compile & npx tsc --watch"
+    "compile": "sass --watch src/scss/main.scss:dist/css/main.css",
+    "dev": "npm run compile & npx tsc --watch",
+    "lint": "eslint src/ts/**/*.ts && stylelint src/scss/**/*.scss"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
   "keywords": [],
-  "author": "",
+  "author": "Ruslana Kolykhan",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "eslint": "^10.2.1",
+    "stylelint": "^17.9.1",
     "typescript": "^6.0.2"
   }
 }
