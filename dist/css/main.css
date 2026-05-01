@@ -508,7 +508,7 @@ body main .hero .discount-section .discount-section-right {
   align-items: stretch;
   min-height: 300px;
   overflow: hidden;
-  background-image: url("./src/assets/Pages/Homepage/suitcases main banner.png");
+  background-image: url("/src/assets/Pages/Homepage/suitcases main banner.png");
 }
 body main .hero .discount-section .discount-section-right img {
   width: 100%;
@@ -935,7 +935,7 @@ body main .our-customers .our-customers-cards .card .customer-name {
 }
 body main .our-benefits {
   background-color: #504E4A;
-  background-image: url(./src/assets/Pages/Homepage/benefits-backgraund.png);
+  background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
   padding: 40px;
   margin-bottom: 100px;
 }
@@ -963,7 +963,7 @@ body main {
 body main .hero-about {
   width: 100%;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./src/assets/Pages/About Us/banner image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Pages/About Us/banner image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1140,7 +1140,7 @@ body main .our-benefits {
   background-color: #504E4A;
   height: 220px;
   margin-bottom: 100px;
-  background-image: url("./src/assets/Pages/Homepage/benefits-backgraund.png");
+  background-image: url("/src/assets/Pages/Homepage/benefits-backgraund.png");
 }
 body main .our-benefits h2 {
   font-size: 20px;
@@ -1171,7 +1171,7 @@ body main {
 body main .hero-contact {
   width: 100%;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./src/assets/Pages/Contact Us/banner image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Pages/Contact Us/banner image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1397,7 +1397,7 @@ body main .flex-container aside .set .set-content .start-rate {
 body main .hero-cart {
   width: 100%;
   height: 200px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./src/assets/Pages/My Cart/banner image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Pages/My Cart/banner image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

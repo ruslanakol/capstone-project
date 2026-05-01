@@ -181,7 +181,7 @@ body {
                     min-height: 300px;
                     overflow: hidden;
 
-                    background-image: url('./src/assets/Pages/Homepage/suitcases main banner.png');
+                    background-image: url('/src/assets/Pages/Homepage/suitcases main banner.png');
 
                     img {
                         width: 100%;
@@ -617,7 +617,7 @@ body {
 
         .our-benefits {
             background-color: $dark-gray;
-            background-image: url(./src/assets/Pages/Homepage/benefits-backgraund.png);
+            background-image: url(/src/assets/Pages/Homepage/benefits-backgraund.png);
             padding: 40px;
             margin-bottom: 100px;
 
