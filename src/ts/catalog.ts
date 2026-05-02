@@ -25,7 +25,7 @@ let activeFilters = {
     salesStatus: '',
 };
 
-fetch('/src/assets/data.json')
+fetch('../../src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         allProducts = json.data;

@@ -39,7 +39,7 @@ document.querySelector('.prev-btn')?.addEventListener('click', () => {
     }
 });
 
-fetch('/src/assets/data.json')
+fetch('../../src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         const products = json.data;

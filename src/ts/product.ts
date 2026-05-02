@@ -25,7 +25,7 @@ interface CartItem {
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
-fetch('/src/assets/data.json')
+fetch('../../src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         const products: Product[] = json.data;
@@ -75,7 +75,7 @@ const updateProductCounter = (): void => {
 document.getElementById('add-to-cart')?.addEventListener('click', () => {
     if (!productId) return;
 
-    fetch('/src/assets/data.json')
+    fetch('../../src/assets/data.json')
         .then(r => r.json())
         .then(json => {
             const product: Product = json.data.find((p: Product) => p.id === productId);
