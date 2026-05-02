@@ -228,7 +228,7 @@ function renderTopSets(): void {
 
     container.innerHTML = random.map(p => `
         <div class="set">
-            <img src="${p.imageUrl}" alt="${p.name}" class="set-img">
+            <img src="../../${p.imageUrl}" alt="${p.name}">
             <div class="set-content">
                 <p>${p.name}</p>
                 <div class="start-rate">

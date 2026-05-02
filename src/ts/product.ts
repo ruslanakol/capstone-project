@@ -45,7 +45,7 @@ function loadProduct(p: Product): void {
 
     if (title) title.textContent = p.name;
     if (price) price.textContent = `$${p.price}`;
-    if (image) image.src = p.imageUrl;
+   if (image) image.src = `../../${p.imageUrl}`; 
 }
 
 const qtyInput = document.getElementById('product-qty') as HTMLInputElement;

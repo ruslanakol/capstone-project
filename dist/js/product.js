@@ -22,7 +22,7 @@ function loadProduct(p) {
     if (price)
         price.textContent = `$${p.price}`;
     if (image)
-        image.src = p.imageUrl;
+        image.src = `../../${p.imageUrl}`;
 }
 const qtyInput = document.getElementById('product-qty');
 (_a = document.getElementById('increase-qty')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
