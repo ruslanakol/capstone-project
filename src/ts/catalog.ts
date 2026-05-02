@@ -119,7 +119,7 @@ document.querySelector('.search-input')?.addEventListener('input', (e) => {
         renderGrid();
     } else if (results.length === 1) {
         
-        window.location.href = `../../src/html/product.html?id=${results[0].id}`;
+        window.location.href = `product.html?id=${results[0].id}`;
     } else {
         hideNotFound();
         filteredProducts = results;
@@ -163,7 +163,7 @@ function renderGrid(): void {
                  style="cursor:pointer">
             ${p.salesStatus ? '<span class="product-card__badge">SALE</span>' : ''}
             <div class="product-card__image">
-                <img src="${p.imageUrl}" alt="${p.name}">
+                <img src="../../${p.imageUrl}" alt="${p.name}">
             </div>
             <div class="product-card__info">
                 <h3 class="product-card__name">${p.name}</h3>
@@ -228,11 +228,11 @@ function renderTopSets(): void {
 
     container.innerHTML = random.map(p => `
         <div class="set">
-            <img src="../../${p.imageUrl}" alt="${p.name}">
+           <img src="../../${p.imageUrl}" alt="${p.name}">
             <div class="set-content">
                 <p>${p.name}</p>
                 <div class="start-rate">
-                    ${'<img src="/src/assets/images/icons/star-yellow.svg" alt="star">'.repeat(Math.round(p.rating))}
+                    ${'<img src="../../src/assets/images/icons/star-yellow.svg" alt="star">'.repeat(Math.round(p.rating))}
                 </div>
                 <p class="price">$${p.price}</p>
             </div>

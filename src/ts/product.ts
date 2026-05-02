@@ -134,7 +134,7 @@ function renderYouMayLike(products: Product[]): void {
         <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="cursor:pointer">
             ${p.salesStatus ? '<div class="product-card__badge">SALE</div>' : ''}
             <div class="product-card__image">
-                <img src="${p.imageUrl}" alt="${p.name}">
+                <img src="../../${p.imageUrl}" alt="${p.name}">
             </div>
             <div class="product-card__info">
                 <h3 class="product-card__name">${p.name}</h3>

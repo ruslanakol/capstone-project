@@ -62,7 +62,7 @@ const renderCart = () => {
             <td class="cart-item__total">$${(item.price * item.quantity).toFixed(2)}</td>
             <td class="cart-item__delete">
                 <button class="delete-btn" data-index="${index}">
-                    <img src="/src/assets/Pages/My Cart/delete.svg" alt="Delete">
+                    <img src="../../src/assets/Pages/My Cart/delete.svg" alt="Delete">
                 </button>
             </td>
         </tr>
