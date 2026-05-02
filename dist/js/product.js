@@ -2,7 +2,7 @@
 var _a, _b, _c, _d;
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
-fetch('/src/assets/data.json')
+fetch('../../src/assets/data.json')
     .then(r => r.json())
     .then(json => {
     const products = json.data;
@@ -46,7 +46,7 @@ const updateProductCounter = () => {
 (_c = document.getElementById('add-to-cart')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => {
     if (!productId)
         return;
-    fetch('/src/assets/data.json')
+    fetch('../../src/assets/data.json')
         .then(r => r.json())
         .then(json => {
         var _a;
@@ -99,7 +99,7 @@ function renderYouMayLike(products) {
     if (!grid)
         return;
     grid.innerHTML = products.map(p => `
-        <div class="product-card" onclick="window.location.href='/src/html/product.html?id=${p.id}'" style="cursor:pointer">
+        <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="cursor:pointer">
             ${p.salesStatus ? '<div class="product-card__badge">SALE</div>' : ''}
             <div class="product-card__image">
                 <img src="${p.imageUrl}" alt="${p.name}">

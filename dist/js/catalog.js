@@ -10,7 +10,7 @@ let activeFilters = {
     size: '',
     salesStatus: '',
 };
-fetch('/src/assets/data.json')
+fetch('../../src/assets/data.json')
     .then(r => r.json())
     .then(json => {
     allProducts = json.data;
@@ -94,7 +94,7 @@ function applySort() {
         renderGrid();
     }
     else if (results.length === 1) {
-        window.location.href = `/src/html/product.html?id=${results[0].id}`;
+        window.location.href = `../../src/html/product.html?id=${results[0].id}`;
     }
     else {
         hideNotFound();
@@ -130,7 +130,7 @@ function renderGrid() {
     }
     grid.innerHTML = pageProducts.map(p => `
         <article class="product-card" 
-                 onclick="window.location.href='/src/html/product.html?id=${p.id}'"
+                 onclick="window.location.href='product.html?id=${p.id}'"
                  style="cursor:pointer">
             ${p.salesStatus ? '<span class="product-card__badge">SALE</span>' : ''}
             <div class="product-card__image">
