@@ -119,7 +119,7 @@ document.querySelector('.search-input')?.addEventListener('input', (e) => {
         renderGrid();
     } else if (results.length === 1) {
         
-        window.location.href = `/src/html/product.html?id=${results[0].id}`;
+        window.location.href = `../../src/html/product.html?id=${results[0].id}`;
     } else {
         hideNotFound();
         filteredProducts = results;
@@ -159,7 +159,7 @@ function renderGrid(): void {
     
     grid.innerHTML = pageProducts.map(p => `
         <article class="product-card" 
-                 onclick="window.location.href='/src/html/product.html?id=${p.id}'"
+                 onclick="window.location.href='product.html?id=${p.id}'"
                  style="cursor:pointer">
             ${p.salesStatus ? '<span class="product-card__badge">SALE</span>' : ''}
             <div class="product-card__image">

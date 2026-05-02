@@ -131,7 +131,7 @@ function renderYouMayLike(products: Product[]): void {
     if (!grid) return;
 
     grid.innerHTML = products.map(p => `
-        <div class="product-card" onclick="window.location.href='/src/html/product.html?id=${p.id}'" style="cursor:pointer">
+        <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="cursor:pointer">
             ${p.salesStatus ? '<div class="product-card__badge">SALE</div>' : ''}
             <div class="product-card__image">
                 <img src="${p.imageUrl}" alt="${p.name}">

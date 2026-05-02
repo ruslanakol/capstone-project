@@ -39,7 +39,7 @@ document.querySelector('.prev-btn')?.addEventListener('click', () => {
     }
 });
 
-fetch('../../src/assets/data.json')
+ fetch('src/assets/data.json')
     .then(r => r.json())
     .then(json => {
         const products = json.data;
@@ -72,7 +72,7 @@ fetch('../../src/assets/data.json')
 function productCard(p: any, btnText: string): string {
     return `
         <div class="product-card" data-id="${p.id}"
-             onclick="window.location.href='/src/html/product.html?id=${p.id}'"
+             onclick="window.location.href='product.html?id=${p.id}'"
              style="cursor:pointer">
             ${p.salesStatus ? '<div class="product-card__badge">SALE</div>' : ''}
             <div class="product-card__image">
