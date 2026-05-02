@@ -7,7 +7,7 @@ body {
             height: 500px; 
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('/src/assets/Pages/About Us/banner image.jpg'); 
+                url('../../src/assets/Pages/About Us/banner image.jpg'); 
             
             background-size: cover;    
             background-position: center; 
@@ -206,7 +206,7 @@ body {
             background-color: $dark-gray;
             height: 220px;
             margin-bottom: 100px;
-            background-image: url("/src/assets/Pages/Homepage/benefits-backgraund.png");
+            background-image: url("../../src/assets/Pages/Homepage/benefits-backgraund.png");
             h2 {
                 font-size: 20px;
                 font-weight: 900;
